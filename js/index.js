@@ -1,7 +1,7 @@
 var j = jQuery.noConflict();
 var defaultPagePath='app/pages/';
 var headerMsg = "Expenzing";
-var urlPath;
+var urlPath = 'http://1.255.255.188:8082/TnEV1_0AWeb/WebService/Login/';
 var WebServicePath = 'http://1.255.255.188:8088/NexstepWebService/mobileLinkResolver.service';
 var clickedFlagCar = false;
 var clickedFlagTicket = false;
@@ -39,7 +39,7 @@ function login()
     jsonToBeSend["pass"] = password.value;
    	var headerBackBtn=defaultPagePath+'categoryMsgPage.html';
 	var pageRef=defaultPagePath+'category.html';
-	urlPath=window.localStorage.getItem("urlPath");
+	//urlPath=window.localStorage.getItem("urlPath");
 	j('#loading').show();
     j.ajax({
          url: urlPath+"LoginWebService",
@@ -53,7 +53,7 @@ function login()
              j('#mainContainer').load(pageRef);
               appPageHistory.push(pageRef);
 			  //addEmployeeDetails(data);
-			  setUserStatusInLocalStorage("Valid");
+			 // setUserStatusInLocalStorage("Valid");
 			  setUserSessionDetails(data,jsonToBeSend);
 			}else if(data.Status == 'Failure'){
  			   successMessage = data.Message;
@@ -82,8 +82,8 @@ function commanLogin(){
  	var domainName = userNameValue.split('@')[1];
 	var jsonToDomainNameSend = new Object();
 	jsonToDomainNameSend["userName"] = domainName;
-	//jsonToDomainNameSend["mobilePlatform"] = device.platform;
-	jsonToDomainNameSend["mobilePlatform"] = "Android";
+	jsonToDomainNameSend["mobilePlatform"] = device.platform;
+	//jsonToDomainNameSend["mobilePlatform"] = "Android";
   	//var res=JSON.stringify(jsonToDomainNameSend);
 	var requestPath = WebServicePath;
 	j.ajax({
@@ -165,3 +165,5 @@ function commanLogin(){
 	appPageHistory.push(pgRef);
  }
  
+			
+
