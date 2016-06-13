@@ -53,30 +53,16 @@ function onConfirmExit(button) {
 
   //Local Database Create,Save,Display
 
- 
-function resetUserSessionDetails(){
-	 window.localStorage.removeItem("TrRole");
-	 window.localStorage.removeItem("EmployeeId");
-	 window.localStorage.removeItem("FirstName");
-	 window.localStorage.removeItem("LastName");
-	 window.localStorage.removeItem("GradeID");
-	 window.localStorage.removeItem("BudgetingStatus");
-	 window.localStorage.removeItem("UnitId");	
-	 window.localStorage.removeItem("UserName");
-	 window.localStorage.removeItem("Password");
-	 dropAllTableDetails();
-}
-
 function setUserSessionDetails(val,userJSON){
-	 window.localStorage.setItem("TrRole",val.TrRole);
-	 window.localStorage.setItem("EmployeeId",val.EmpId);
-	 window.localStorage.setItem("FirstName",val.FirstName);
-	 window.localStorage.setItem("LastName",val.LastName);
+	 //window.localStorage.setItem("TrRole",val.TrRole);
+	 window.localStorage.setItem("EmployeeId",val.empId);
+	// window.localStorage.setItem("FirstName",val.FirstName);
+	 window.localStorage.setItem("LastName",val.empName);
 	 window.localStorage.setItem("GradeID",val.GradeID);
-	 window.localStorage.setItem("BudgetingStatus",val.BudgetingStatus);
-	 window.localStorage.setItem("UnitId",val.UnitId);	
-	 window.localStorage.setItem("UserName",userJSON["user"]);
-	 window.localStorage.setItem("Password",userJSON["pass"]);
+	 //window.localStorage.setItem("BudgetingStatus",val.BudgetingStatus);
+	// window.localStorage.setItem("UnitId",val.UnitId);	
+	// window.localStorage.setItem("UserName",userJSON["user"]);
+	// window.localStorage.setItem("Password",userJSON["pass"]);
 	
 }
 
@@ -86,31 +72,13 @@ function setUserStatusInLocalStorage(status){
 function setUrlPathLocalStorage(url){
 	window.localStorage.setItem("urlPath",url);
 }
-function dropAllTableDetails(){
-
-	mydb.transaction(function(t) {
-		t.executeSql("DELETE TABLE currencyMst ");
-		t.executeSql("DELETE TABLE accountHeadMst ");
-		t.executeSql("DELETE TABLE expNameMst");
-		t.executeSql("DELETE TABLE businessExpDetails");
-		t.executeSql("DELETE TABLE walletMst");
-		t.executeSql("DELETE TABLE travelModeMst");
-		t.executeSql("DELETE TABLE travelCategoryMst ");
-		t.executeSql("DELETE TABLE cityTownMst");
-		t.executeSql("DELETE TABLE travelTypeMst");
-		t.executeSql("DELETE TABLE travelAccountHeadMst");
-		t.executeSql("DELETE TABLE travelExpenseNameMst");
-		t.executeSql("DELETE TABLE travelSettleExpDetails");
-		t.executeSql("DELETE TABLE travelRequestDetails");
-	 });
-
-}
 
 function getUserID() {
 	userKey=window.localStorage.getItem("EmployeeId");
 	if(userKey==null) return  "";
 	else return userKey;
 }
+
 function createBarcode(){
 		var headerBackBtn=defaultPagePath+'backbtnPage.html';
      var pageRef=defaultPagePath+'barcode.html';
