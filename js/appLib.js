@@ -162,3 +162,13 @@ function goBackEvent() {
 		}
 	}
 }
+
+function smsReaderFn(){
+		var headerBackBtn=defaultPagePath+'smsReader.html';
+     var pageRef=defaultPagePath+'smsReader.html';
+			j(document).ready(function() {
+				j('#mainHeader').load(headerBackBtn);
+				j('#mainContainer').load(pageRef);
+			});
+   appPageHistory.push(pageRef);
+	}

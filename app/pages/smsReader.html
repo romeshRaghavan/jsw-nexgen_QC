@@ -1,0 +1,12 @@
+
+<script type="text/javascript">
+
+
+
+cordova.plugins.smsplugin.getSmsByCustomCriteria(-1, smsPlugin.COLS.READ + '=0', null,function (msg) {
+  alert(msg[smsPlugin.COLS.BODY]);
+}, function() {
+  alert("Error while reading SMS");
+});
+
+</script>
