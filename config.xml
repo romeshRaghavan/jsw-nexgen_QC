@@ -61,7 +61,7 @@
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="org.apache.cordova.file"/>
     <gap:plugin name="org.apache.cordova.file-transfer"/>
-    
+    <gap:plugin name="tr.bel.mamak.sms_plagin" spec="0.1.0" source="pgb" />
 <!--<plugin name="com.applegrew.cordova.android.plugin.sms"  source="npm" spec="1.0.1" />-->
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />
