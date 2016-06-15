@@ -62,7 +62,7 @@
     <gap:plugin name="org.apache.cordova.file"/>
     <gap:plugin name="org.apache.cordova.file-transfer"/>
     <gap:plugin name="tr.bel.mamak.sms_plagin" spec="0.1.0" source="pgb" />
-<gap:plugin name="com.applegrew.cordova.android.plugin.sms"  source="pgb" spec="1.0.1" />
+<plugin name="com.applegrew.cordova.android.plugin.sms"  source="pgb"  />
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />
     <gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" />
