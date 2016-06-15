@@ -34,9 +34,9 @@
                 <param name="android-package" value="com.applegrew.cordova.android.plugin.sms.SmsPlugin" />
             </feature>
 
- <uses-permission android:name="android.permission.RECEIVE_SMS" />
+  <uses-permission android:name="android.permission.RECEIVE_SMS" />
   <uses-permission android:name="android.permission.READ_SMS" />
-     <feature name="http://api.phonegap.com/1.0/camera"/> -->
+  <feature name="http://api.phonegap.com/1.0/camera"/> -->
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
@@ -60,7 +60,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="org.apache.cordova.file"/>
-    <gap:plugin name="org.apache.cordova.file-transfer"/> 
+    <gap:plugin name="org.apache.cordova.file-transfer"/>
     <gap:plugin name="tr.bel.mamak.sms_plagin" spec="0.1.0" source="pgb" />
     <gap:plugin name="cordova-plugin-sms" source="npm" />
     <plugin spec="https://github.com/softdive/cordova-plugin-sms.git" source="git" />
