@@ -26,8 +26,9 @@
     <preference name="android-maxSdkVersion" value="23" />
     <preference name="android-installLocation" value="auto" />
    
-    <uses-permssion android:name="android.permission.READ_SMS"/>
-    <uses-permssion android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
   
      <feature name="http://api.phonegap.com/1.0/device" />
 
