@@ -79,6 +79,7 @@
     <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
     
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+ <uses-permission android:name="android.permission.WRITE_SMS"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
     
      
