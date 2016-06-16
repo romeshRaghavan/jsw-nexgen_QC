@@ -38,6 +38,12 @@
   <uses-permission android:name="android.permission.READ_SMS" />
 
   <feature name="http://api.phonegap.com/1.0/camera"/> -->
+
+   <uses-permission android:name="android.permission.RECEIVE_SMS" />
+   <uses-permission android:name="android.permission.WRITE_SMS"/>
+   <uses-permission android:name="android.permission.READ_SMS"/>
+
+
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
