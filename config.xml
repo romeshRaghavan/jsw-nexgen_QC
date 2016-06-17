@@ -94,6 +94,9 @@
     <gap:splash gap:platform="blackberry" src="www/res/screen/blackberry/screen-225.png" />
     <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <plugin name="cordova-plugin-whitelist" version="1" />
+
+    <plugin name="info.asankan.phonegap.smsplugin" spec="0.1.0" source="pgb" />
+
     <access origin="*" />
     
     <allow-intent href="http://*/*" />
