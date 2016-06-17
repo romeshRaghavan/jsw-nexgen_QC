@@ -30,14 +30,7 @@
   
      <feature name="http://api.phonegap.com/1.0/device" />
 
-          <!--     <feature name="SmsPlugin">
-                <param name="android-package" value="com.applegrew.cordova.android.plugin.sms.SmsPlugin" />
-            </feature>
-
-  <uses-permission android:name="android.permission.RECEIVE_SMS" />
-  <uses-permission android:name="android.permission.READ_SMS" />
-
-  <feature name="http://api.phonegap.com/1.0/camera"/> -->
+        
 
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
@@ -63,9 +56,7 @@
     <gap:plugin name="org.apache.cordova.vibration" /> 
     <gap:plugin name="org.apache.cordova.file"/>
     <gap:plugin name="org.apache.cordova.file-transfer"/>
-    <gap:plugin name="tr.bel.mamak.sms_plagin" spec="0.1.0" source="pgb" />
-    <gap:plugin name="cordova-plugin-sms" source="npm"   />
-    <plugin spec="https://github.com/softdive/cordova-plugin-sms.git" source="git" />
+   
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />
     <gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" />
@@ -78,9 +69,7 @@
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
     <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
     
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
- <uses-permission android:name="android.permission.WRITE_SMS"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
+   
     
      
     <icon gap:platform="blackberry" src="www/res/icon/blackberry/icon-80.png" />
