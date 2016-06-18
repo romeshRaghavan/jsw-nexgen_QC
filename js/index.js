@@ -48,14 +48,14 @@ function login()
          crossDomain: true,
          data: JSON.stringify(jsonToBeSend),
          success: function(data) {
-         	if (data.Status == 'Success'){
+         	if (data.Status == 'S'){
         	 j('#mainHeader').load(headerBackBtn);
              j('#mainContainer').load(pageRef);
               appPageHistory.push(pageRef);
 			  //addEmployeeDetails(data);
 			 // setUserStatusInLocalStorage("Valid");
 			  setUserSessionDetails(data,jsonToBeSend);
-			}else if(data.Status == 'Failure'){
+			}else if(data.Status == 'E'){
  			   successMessage = data.Message;
 			   if(successMessage.length == 0){
 					successMessage = "Wrong UserName or Password";
