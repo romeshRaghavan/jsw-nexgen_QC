@@ -26,6 +26,7 @@
     <preference name="android-maxSdkVersion" value="23" />
     <preference name="android-installLocation" value="auto" />
    <preference name="phonegap-version" value="cli-5.2.0" />
+   <preference name="loadUrlTimeoutValue" value="700000" />
     
   
      <feature name="http://api.phonegap.com/1.0/device" />
