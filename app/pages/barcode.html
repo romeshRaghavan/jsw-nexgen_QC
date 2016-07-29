@@ -8,6 +8,7 @@ cordova.plugins.barcodeScanner.scan(
                 "Cancelled: " + result.cancelled);
                 alert("status inside : "+result.cancelled);
                 status = result.cancelled;
+                abc();
                
       }, 
       function (error) {
@@ -22,4 +23,8 @@ cordova.plugins.barcodeScanner.scan(
       }
     );
     alert("status : "+status)
+    
+    function abc(){
+          alert("inside abc");
+    }
 </script>
