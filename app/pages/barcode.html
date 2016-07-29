@@ -8,7 +8,7 @@ cordova.plugins.barcodeScanner.scan(
                 "Cancelled: " + result.cancelled);
                 alert("status inside : "+result.cancelled);
                 status = result.cancelled;
-                abc(result.cancelled);
+                abc(result.cancelled,result.text);
                
       }, 
       function (error) {
@@ -24,7 +24,9 @@ cordova.plugins.barcodeScanner.scan(
     );
     alert("status : "+status)
     
-    function abc(status){
-          alert("inside abc"+status);
+    function abc(cancelledStatus,assetNo){
+          alert("cancelledStatus : "+cancelledStatus)
+          alert("assetNo : "+assetNo)
+          barcodeWebservice(cancelledStatus,assetNo);
     }
 </script>
