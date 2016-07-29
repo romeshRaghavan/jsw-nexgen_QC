@@ -76,6 +76,36 @@ function login()
 
  }
  
+  function barcodeWebservice(cancelledStatus,assetNo)
+{
+	alert("barcodeWebservice");
+	alert("cancelledStatus : "+cancelledStatus);
+   	if(cancelledStatus == false){
+	alert("inside if");
+		var jsonToBeSend=new Object();
+		alert("1");
+		jsonToBeSend["assetNo"] = assetNo;
+		alert("2");
+		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
+		alert("3 : "+window.localStorage.getItem('EmployeeId'));
+		j('#loading').show();
+		 j.ajax({
+         url: urlPath+"LoginWebService",
+         type: 'POST',
+         dataType: 'json',
+         crossDomain: true,
+         data: JSON.stringify(jsonToBeSend),
+         success: function(data) {
+				alert("perfectly done");
+				},
+			 error:function(data) {
+			   j('#loading').hide();
+			 }
+		});
+		alert("end");
+	}
+}
+
 function commanLogin(){
  	var userName = document.getElementById("userName");
  	var userNameValue = userName.value; 
