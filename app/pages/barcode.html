@@ -9,6 +9,7 @@ cordova.plugins.barcodeScanner.scan(
                 "Cancelled: " + result.cancelled);
                 status = result.cancelled;
                 alert("status inside : "+status);
+                abc();
       }, 
       function (error) {
           alert("Scanning failed: " + error);
@@ -21,10 +22,9 @@ cordova.plugins.barcodeScanner.scan(
           "orientation" : "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
       }
       alert("status end : "+status);
-      abc(result);
-   );
-   function abc(result){
-     alert("in abc");
-     alert("result.cancelled : "+result.cancelled)
-   }
+    );
+    
+    function abc(){
+      alert("inside abc");
+    }
 </script>
