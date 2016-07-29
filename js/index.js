@@ -91,7 +91,7 @@ function login()
 		alert("urlPath :" +urlPath);
 		j('#loading').show();
 		 j.ajax({
-         url: urlPath+"LoginWebService",
+         url: urlPath+"BarcodeWebservice",
          type: 'POST',
          dataType: 'json',
          crossDomain: true,
