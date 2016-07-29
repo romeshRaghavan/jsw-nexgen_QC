@@ -88,6 +88,7 @@ function login()
 		alert("2");
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
 		alert("3 : "+window.localStorage.getItem('EmployeeId'));
+		alert("urlPath :" +urlPath);
 		j('#loading').show();
 		 j.ajax({
          url: urlPath+"LoginWebService",
