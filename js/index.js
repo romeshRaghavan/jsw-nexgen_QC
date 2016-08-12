@@ -80,6 +80,7 @@ function login()
 {
 	alert("barcodeWebservice");
 	alert("cancelledStatus : "+cancelledStatus);
+	/*var pageRef=defaultPagePath+'barcodeInformation.html';*/
    	if(cancelledStatus == false){
 	alert("inside if");
 		var jsonToBeSend=new Object();
@@ -97,7 +98,13 @@ function login()
          crossDomain: true,
          data: JSON.stringify(jsonToBeSend),
          success: function(data) {
-				alert("perfectly done");
+					if (data.status == 'SUCESS_WITH_VALID_EMP'){
+						getBarcodeInformation(data);
+					}else if(data.status == 'NO_DATA_FOUND'){
+						alert("No Data Found against this Barcode.");
+					}else if(data.status == 'SUCESS_WITH_INVALID_EMP'){
+						alert("Asset not allocated to you");
+					}
 				},
 			 error:function(data) {
 			   j('#loading').hide();
@@ -107,6 +114,16 @@ function login()
 	}
 }
 
+function createBarcode(){
+		var headerBackBtn=defaultPagePath+'backbtnPage.html';
+			var pageRef=defaultPagePath+'barcode.html';
+			j(document).ready(function() {
+				j('#mainHeader').load(headerBackBtn);
+				j('#mainContainer').load(pageRef);
+			});
+		appPageHistory.push(pageRef);
+	}
+	
 function commanLogin(){
  	var userName = document.getElementById("userName");
  	var userNameValue = userName.value; 
@@ -196,5 +213,12 @@ function commanLogin(){
 	appPageHistory.push(pgRef);
  }
  
-			
-
+ function getBarcodeInformation(){
+	var headerBackBtn=defaultPagePath+'backbtnPage.html';
+    	var pageRef=defaultPagePath+'barcodeInformation.html';
+		j(document).ready(function() {
+			j('#mainHeader').load(headerBackBtn);
+			j('#mainContainer').load(pageRef);
+		});
+		appPageHistory.push(pageRef);
+ }
