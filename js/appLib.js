@@ -81,7 +81,7 @@ function getUserID() {
 
 function createBarcode(){
 		var headerBackBtn=defaultPagePath+'backbtnPage.html';
-     var pageRef=defaultPagePath+'barcode.html';
+     var pageRef=defaultPagePath+'barcodeInformation.html';
 			j(document).ready(function() {
 				j('#mainHeader').load(headerBackBtn);
 				j('#mainContainer').load(pageRef);
