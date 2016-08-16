@@ -6,7 +6,6 @@ cordova.plugins.barcodeScanner.scan(
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);
-                alert("status inside : "+result.cancelled);
                 status = result.cancelled;
                 abc(result.cancelled,result.text);
                
@@ -22,11 +21,7 @@ cordova.plugins.barcodeScanner.scan(
           "orientation" : "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
       }
     );
-    alert("status : "+status)
-    
     function abc(cancelledStatus,assetNo){
-          alert("cancelledStatus : "+cancelledStatus)
-          alert("assetNo : "+assetNo)
           barcodeWebservice(cancelledStatus,assetNo);
     }
 </script>
