@@ -78,18 +78,11 @@ function login()
  
   function barcodeWebservice(cancelledStatus,assetNo)
 {
-	alert("barcodeWebservice");
-	alert("cancelledStatus : "+cancelledStatus);
 	/*var pageRef=defaultPagePath+'barcodeInformation.html';*/
    	if(cancelledStatus == false){
-	alert("inside if");
 		var jsonToBeSend=new Object();
-		alert("1");
 		jsonToBeSend["assetNo"] = assetNo;
-		alert("2");
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
-		alert("3 : "+window.localStorage.getItem('EmployeeId'));
-		alert("urlPath :" +urlPath);
 		j('#loading').show();
 		 j.ajax({
          url: urlPath+"BarcodeWebservice",
@@ -110,7 +103,6 @@ function login()
 			   j('#loading').hide();
 			 }
 		});
-		alert("end");
 	}
 }
 
@@ -213,12 +205,48 @@ function commanLogin(){
 	appPageHistory.push(pgRef);
  }
  
- function getBarcodeInformation(){
-	var headerBackBtn=defaultPagePath+'backbtnPage.html';
+ function getBarcodeInformation(data){
+ alert("getBarcodeInformation");
+	createBarcodeInformationTable(data);
+		
+		
+ }
+ 
+ function createBarcodeInformationTable(data){
+ alert("createBarcodeInformationTable");
+	mytable = j('<table></table>').attr({ id: "source",class: ["table","table-striped","table-bordered"].join(' ') });
+	var rowThead = j("<thead></thead>").appendTo(mytable);
+	var rowTh = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(rowThead);
+	
+	j('<th></th>').text("Barcode Information").appendTo(rowTh);
+	
+		var classCode = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
+	
+		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text("Class Code").appendTo(classCode);	
+		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.classCode).appendTo(classCode);
+
+		var subClassCode = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
+	
+		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text("Sub Class Code").appendTo(subClassCode);	
+		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.subClassCode).appendTo(subClassCode);		
+				
+		var uniqueCode = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
+	
+		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text("Unique Code").appendTo(uniqueCode);	
+		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.uniqueCode).appendTo(uniqueCode);
+		
+		var allocationType = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
+	
+		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text(Allocation Type).appendTo(allocationType);	
+		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.typeOfAllocation).appendTo(allocationType);
+		
+		var headerBackBtn=defaultPagePath+'backbtnPage.html';
     	var pageRef=defaultPagePath+'barcodeInformation.html';
 		j(document).ready(function() {
 			j('#mainHeader').load(headerBackBtn);
 			j('#mainContainer').load(pageRef);
 		});
 		appPageHistory.push(pageRef);
- }
+		
+		mytable.appendTo("#box");
+	}
