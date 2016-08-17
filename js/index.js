@@ -240,14 +240,5 @@ function commanLogin(){
 	
 		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text(Allocation Type).appendTo(allocationType);	
 		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.typeOfAllocation).appendTo(allocationType);
-		
-		var headerBackBtn=defaultPagePath+'backbtnPage.html';
-    	var pageRef=defaultPagePath+'barcodeInformation.html';
-		j(document).ready(function() {
-			j('#mainHeader').load(headerBackBtn);
-			j('#mainContainer').load(pageRef);
-		});
-		appPageHistory.push(pageRef);
-		
-		mytable.appendTo("#box");
+		alert("test")
 	}
