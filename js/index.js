@@ -214,31 +214,10 @@ function commanLogin(){
  
  function createBarcodeInformationTable(data){
 	 alert("createBarcodeInformationTable");
-	 alert("createBarcodeInformationTable");
-	mytable = j('<table></table>').attr({ id: "source",class: ["table","table-striped","table-bordered"].join(' ') });
+	 mytable = j('<table></table>').attr({ id: "source",class: ["table","table-striped","table-bordered"].join(' ') });
 	var rowThead = j("<thead></thead>").appendTo(mytable);
 	var rowTh = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(rowThead);
 	
 	j('<th></th>').text("Barcode Information").appendTo(rowTh);
-	
-		var classCode = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
-	
-		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text("Class Code").appendTo(classCode);	
-		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.classCode).appendTo(classCode);
-
-		var subClassCode = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
-	
-		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text("Sub Class Code").appendTo(subClassCode);	
-		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.subClassCode).appendTo(subClassCode);		
-				
-		var uniqueCode = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
-	
-		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text("Unique Code").appendTo(uniqueCode);	
-		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.uniqueCode).appendTo(uniqueCode);
-		
-		var allocationType = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(mytable);
-	
-		j('<td></td>').attr({ class: ["expDate"].join(' ') }).text(Allocation Type).appendTo(allocationType);	
-		j('<td></td>').attr({ class: ["expName"].join(' ') }).text(data.typeOfAllocation).appendTo(allocationType);
-		alert("test")
+	alert("test End")
 	}
