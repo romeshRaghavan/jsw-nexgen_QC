@@ -114,6 +114,8 @@ function createBarcode(){
 				j('#mainContainer').load(pageRef);
 			});
 		appPageHistory.push(pageRef);
+		/*var data1 = 'Cla Ed-EC--Calddc-28-07-00984C12-35';
+		createBarcodeInformationTable(data1);*/
 	}
 	
 function commanLogin(){
@@ -205,19 +207,135 @@ function commanLogin(){
 	appPageHistory.push(pgRef);
  }
  
- function getBarcodeInformation(data){
-	 alert("getBarcodeInformation");
-	createBarcodeInformationTable(data);
+	function createBarcodeInformationTable(data){
+		mytable = j('<table></table>');
+		/*var rowThead = j("<thead></thead>").appendTo(mytable);
+		var rowTh = j('<tr></tr>').appendTo(rowThead);
+		
+		j('<th></th>').text("Barcode Information").appendTo(rowTh);
+		
+		//ClassCode = j('<tr></tr>').appendTo(mytable);
+		
+		j('<td></td>').text("Class Code").appendTo(classCode);	
+		j('<td></td>').text(data).appendTo(classCode);*/
+		var tBody = j("<tbody>").appendTo(mytable).attr('id','ttbody');
+			
+			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
+			
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+								"</div></td>").appendTo(trBreak);
+			j("</tr>").appendTo(tBody);	
+			
+			var trClassCode = j("<tr>").appendTo(tBody).attr('id','classCode');
+				
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'> Class Code : </label>" +
+								"</div></td>").appendTo(trClassCode);
+								
+				j("<td style='height:10%; width:65%'><div ><label style='font-weight: 800'>"+data.classCode+"</label>" +
+						"</div></td>").appendTo(trClassCode);
+						
+			j("</tr>").appendTo(tBody);
+					
+			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
+		
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+								"</div></td>").appendTo(trBreak);
+			
+			j("</tr>").appendTo(tBody);	
+			
+			var trSubClassCode = j("<tr>").appendTo(tBody).attr('id','trSubClassCode');
+				
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'> Sub Class Code : </label>" +
+								"</div></td>").appendTo(trSubClassCode);
+								
+				j("<td style='height:10%; width:65%'><div ><label style='font-weight: 800'>"+data.subClassCode+"</label>" +
+						"</div></td>").appendTo(trSubClassCode);
+						
+			j("</tr>").appendTo(tBody);
+
+			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
+			
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+								"</div></td>").appendTo(trBreak);
+								
+			j("</tr>").appendTo(tBody);
+			
+			var trUniqueCode = j("<tr>").appendTo(tBody).attr('id','trUniqueCode');
+				
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'> Unique Code : </label>" +
+								"</div></td>").appendTo(trUniqueCode);
+								
+				j("<td style='height:10%; width:65%'><div ><label style='font-weight: 800'>"+data.uniqueCode+"</label>" +
+						"</div></td>").appendTo(trUniqueCode);
+						
+			j("</tr>").appendTo(tBody);
+
+			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
+			
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+								"</div></td>").appendTo(trBreak);
+								
+			j("</tr>").appendTo(tBody);	
+			
+			var trTypeOfAllocation = j("<tr>").appendTo(tBody).attr('id','trTypeOfAllocation');
+				
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'> Type of Allocation : </label>" +
+								"</div></td>").appendTo(trTypeOfAllocation);
+								
+				j("<td style='height:10%; width:65%'><div ><label style='font-weight: 800'>"+data.typeOfAllocation+"</label>" +
+						"</div></td>").appendTo(trTypeOfAllocation);
+						
+			j("</tr>").appendTo(tBody);			
+			
+			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
+			
+				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+								"</div></td>").appendTo(trBreak);
+			
+			j("</tr>").appendTo(tBody);				
+			
+			var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
+			
+				j("<td style='height:20%; width:15%'><div class='leftTD'><input type='button' class='btn btn-info' id='approve' value='Approve'><br/>" +
+					"</div></td>").appendTo(tBody);
+						
+				j("<td style='height:20%; width:15%'><div class='leftTD'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
+					"</div></td>").appendTo(tBody);
+					
+			j("</tr>").appendTo(tBody);			
+			
+			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
+			
+				j("<td style='height:10%; width:50%'><div ><label style='font-weight: 800'></label>" +
+								"</div></td>").appendTo(trBreak);
+			
+			j("</tr>").appendTo(tBody);	
+			
+		j("</tbody>").appendTo(mytable);
 		
 		
- }
- 
- function createBarcodeInformationTable(data){
-	 alert("createBarcodeInformationTable");
-	 mytable = j('<table></table>').attr({ id: "source",class: ["table","table-striped","table-bordered"].join(' ') });
-	var rowThead = j("<thead></thead>").appendTo(mytable);
-	var rowTh = j('<tr></tr>').attr({ class: ["test"].join(' ') }).appendTo(rowThead);
+			var headerBackBtn=defaultPagePath+'backbtnPage.html';
+			var pageRef=defaultPagePath+'barcodeInformation.html';
+			j(document).ready(function() {
+				j('#mainHeader').load(headerBackBtn, function() {
+					j('#mainContainer').load(pageRef, function() {
+						mytable.appendTo("#barcodebox");
+							j("#approve").attr("onclick", "physicalVerification('"+data+"')");
+							j("#cancel").attr("onclick", "cancelPhysicalVerification('"+data+"')");
+					});
+					
+				});
+			});
+		appPageHistory.push(pageRef);
+		
+	}
+
+	function physicalVerification(data){
+		alert("inside physicalVerification");
+		alert(data);
+	}
 	
-	j('<th></th>').text("Barcode Information").appendTo(rowTh);
-	alert("test End")
+	function cancelPhysicalVerification(data){
+		alert("inside cancelPhysicalVerification");
+		alert(data);
 	}
