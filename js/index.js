@@ -207,7 +207,7 @@ function commanLogin(){
 	appPageHistory.push(pgRef);
  }
  
-	function createBarcodeInformationTable(data){
+	function getBarcodeInformation(data){
 		mytable = j('<table></table>');
 		/*var rowThead = j("<thead></thead>").appendTo(mytable);
 		var rowTh = j('<tr></tr>').appendTo(rowThead);
