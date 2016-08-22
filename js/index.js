@@ -220,7 +220,7 @@ function commanLogin(){
  
 	function getBarcodeInformation(data){
 		mytable = j('<table></table>');
-		var tBody = j("<tbody>").appendTo(mytable).attr('id','ttbody');
+		var tBody = j("<tbody>").appendTo(mytable).attr('id','tbody');
 			
 			var trClassCode = j("<tr>").appendTo(tBody).attr('id','classCode');
 				
