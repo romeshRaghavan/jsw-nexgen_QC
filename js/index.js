@@ -83,6 +83,7 @@ function login()
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = assetNo;
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
+		jsonToBeSend["command"] = "getBarcodeInformation";
 		j('#loading').show();
 		 j.ajax({
          url: urlPath+"BarcodeWebservice",
