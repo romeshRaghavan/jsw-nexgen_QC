@@ -322,7 +322,7 @@ function updatePhysicalVerification(uniqueCode){
 		});
 	}
 	
-	function cancel(data){
+	function cancel(){
 		var headerBackBtn=defaultPagePath+'backbtnPage.html';
 		var pageRef=defaultPagePath+'category.html';
 		 j('#mainHeader').load(headerBackBtn);
