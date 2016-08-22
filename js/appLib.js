@@ -79,16 +79,6 @@ function getUserID() {
 	else return userKey;
 }
 
-function createBarcode(){
-		var headerBackBtn=defaultPagePath+'backbtnPage.html';
-     var pageRef=defaultPagePath+'barcodeInformation.html';
-			j(document).ready(function() {
-				j('#mainHeader').load(headerBackBtn);
-				j('#mainContainer').load(pageRef);
-			});
-   appPageHistory.push(pageRef);
-	}
-
 	function goBack() {
 	var currentUser=getUserID();
 	
