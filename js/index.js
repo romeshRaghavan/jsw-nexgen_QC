@@ -219,7 +219,7 @@ function commanLogin(){
  }
  
 	function getBarcodeInformation(data){
-		mytable = j('<table></table>');
+		mytable = j('<table border="0"></table>');
 		/*var rowThead = j("<thead></thead>").appendTo(mytable);
 		var rowTh = j('<tr></tr>').appendTo(rowThead);
 		
@@ -233,91 +233,91 @@ function commanLogin(){
 			
 			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
 			
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
 								"</div></td>").appendTo(trBreak);
 			j("</tr>").appendTo(tBody);	
 			
 			var trClassCode = j("<tr>").appendTo(tBody).attr('id','classCode');
 				
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'> Class Code : </label>" +
+				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Class Code : </label>" +
 								"</div></td>").appendTo(trClassCode);
 								
-				j("<td style='height:10%; width:65%'><div ><label style='font-weight: 800'>"+data.classCode+"</label>" +
+				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.classCode+"</label>" +
 						"</div></td>").appendTo(trClassCode);
 						
 			j("</tr>").appendTo(tBody);
 					
 			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
 		
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
 								"</div></td>").appendTo(trBreak);
 			
 			j("</tr>").appendTo(tBody);	
 			
 			var trSubClassCode = j("<tr>").appendTo(tBody).attr('id','trSubClassCode');
 				
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'> Sub Class Code : </label>" +
+				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Sub Class Code : </label>" +
 								"</div></td>").appendTo(trSubClassCode);
 								
-				j("<td style='height:10%; width:65%'><div ><label style='font-weight: 800'>"+data.subClassCode+"</label>" +
+				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.subClassCode+"</label>" +
 						"</div></td>").appendTo(trSubClassCode);
 						
 			j("</tr>").appendTo(tBody);
 
 			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
 			
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
 								"</div></td>").appendTo(trBreak);
 								
 			j("</tr>").appendTo(tBody);
 			
 			var trUniqueCode = j("<tr>").appendTo(tBody).attr('id','trUniqueCode');
 				
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'> Unique Code : </label>" +
+				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Unique Code : </label>" +
 								"</div></td>").appendTo(trUniqueCode);
 								
-				j("<td style='height:10%; width:65%'><div ><label style='font-weight: 800'>"+data.uniqueCode+"</label>" +
+				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.uniqueCode+"</label>" +
 						"</div></td>").appendTo(trUniqueCode);
 						
 			j("</tr>").appendTo(tBody);
 
 			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
 			
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
 								"</div></td>").appendTo(trBreak);
 								
 			j("</tr>").appendTo(tBody);	
 			
 			var trTypeOfAllocation = j("<tr>").appendTo(tBody).attr('id','trTypeOfAllocation');
 				
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'> Type of Allocation : </label>" +
+				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Type of Allocation : </label>" +
 								"</div></td>").appendTo(trTypeOfAllocation);
 								
-				j("<td style='height:10%; width:65%'><div ><label style='font-weight: 800'>"+data.typeOfAllocation+"</label>" +
+				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.typeOfAllocation+"</label>" +
 						"</div></td>").appendTo(trTypeOfAllocation);
 						
 			j("</tr>").appendTo(tBody);			
 			
 			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
 			
-				j("<td style='height:10%; width:35%'><div ><label style='font-weight: 800'></label>" +
+				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
 								"</div></td>").appendTo(trBreak);
 			
 			j("</tr>").appendTo(tBody);				
 			if(data.assetPhysicalVerificationStatus == 'S'){
 				var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
 				
-					j("<td style='height:20%; width:15%'><div class='leftTD'><input type='button' class='btn btn-info' id='approve' value='Approve'><br/>" +
+					j("<td style='height:20%; width:30%'><div class='leftTD'><input type='button' class='btn btn-info' id='approve' value='Approve'><br/>" +
 						"</div></td>").appendTo(tBody);
 							
-					j("<td style='height:20%; width:15%'><div class='leftTD'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
+					j("<td style='height:20%; width:30%'><div class='leftTD'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
 						"</div></td>").appendTo(tBody);
 			}
 			j("</tr>").appendTo(tBody);			
 			
 			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
 			
-				j("<td style='height:10%; width:50%'><div ><label style='font-weight: 800'></label>" +
+				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
 								"</div></td>").appendTo(trBreak);
 			
 			j("</tr>").appendTo(tBody);	
