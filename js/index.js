@@ -219,23 +219,8 @@ function commanLogin(){
  }
  
 	function getBarcodeInformation(data){
-		mytable = j('<table border="0"></table>');
-		/*var rowThead = j("<thead></thead>").appendTo(mytable);
-		var rowTh = j('<tr></tr>').appendTo(rowThead);
-		
-		j('<th></th>').text("Barcode Information").appendTo(rowTh);
-		
-		//ClassCode = j('<tr></tr>').appendTo(mytable);
-		
-		j('<td></td>').text("Class Code").appendTo(classCode);	
-		j('<td></td>').text(data).appendTo(classCode);*/
+		mytable = j('<table></table>');
 		var tBody = j("<tbody>").appendTo(mytable).attr('id','ttbody');
-			
-			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
-			
-				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
-								"</div></td>").appendTo(trBreak);
-			j("</tr>").appendTo(tBody);	
 			
 			var trClassCode = j("<tr>").appendTo(tBody).attr('id','classCode');
 				
@@ -247,13 +232,6 @@ function commanLogin(){
 						
 			j("</tr>").appendTo(tBody);
 					
-			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
-		
-				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
-								"</div></td>").appendTo(trBreak);
-			
-			j("</tr>").appendTo(tBody);	
-			
 			var trSubClassCode = j("<tr>").appendTo(tBody).attr('id','trSubClassCode');
 				
 				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Sub Class Code : </label>" +
@@ -264,13 +242,6 @@ function commanLogin(){
 						
 			j("</tr>").appendTo(tBody);
 
-			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
-			
-				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
-								"</div></td>").appendTo(trBreak);
-								
-			j("</tr>").appendTo(tBody);
-			
 			var trUniqueCode = j("<tr>").appendTo(tBody).attr('id','trUniqueCode');
 				
 				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Unique Code : </label>" +
@@ -281,13 +252,6 @@ function commanLogin(){
 						
 			j("</tr>").appendTo(tBody);
 
-			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
-			
-				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
-								"</div></td>").appendTo(trBreak);
-								
-			j("</tr>").appendTo(tBody);	
-			
 			var trTypeOfAllocation = j("<tr>").appendTo(tBody).attr('id','trTypeOfAllocation');
 				
 				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Type of Allocation : </label>" +
@@ -296,14 +260,8 @@ function commanLogin(){
 				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.typeOfAllocation+"</label>" +
 						"</div></td>").appendTo(trTypeOfAllocation);
 						
-			j("</tr>").appendTo(tBody);			
+			j("</tr>").appendTo(tBody);	
 			
-			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
-			
-				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
-								"</div></td>").appendTo(trBreak);
-			
-			j("</tr>").appendTo(tBody);				
 			if(data.assetPhysicalVerificationStatus == 'S'){
 				var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
 				
@@ -313,15 +271,7 @@ function commanLogin(){
 					j("<td style='height:20%; width:30%'><div class='leftTD'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
 						"</div></td>").appendTo(tBody);
 			}
-			j("</tr>").appendTo(tBody);			
-			
-			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
-			
-				j("<td style='height:5%; width:100%'><div ><label style='font-weight: 800'></label>" +
-								"</div></td>").appendTo(trBreak);
-			
-			j("</tr>").appendTo(tBody);	
-			
+		
 		j("</tbody>").appendTo(mytable);
 		
 		
