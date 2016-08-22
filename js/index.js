@@ -357,7 +357,7 @@ function updatePhysicalVerification(uniqueCode){
          		alert("data.status : "+data.status);
 					if (data.status == 'SUCESS'){
 						alert("Asset Physical Verification Done Sucessfully.");
-					}else if(data.status == 'NO_DATA_FOUND'){
+					}else if(data.status == 'FAILURE'){
 						alert("Can not Update Asset Physical Verification.");
 					}
 					var headerBackBtn=defaultPagePath+'backbtnPage.html';
