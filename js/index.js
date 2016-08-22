@@ -95,8 +95,18 @@ function login()
 						getBarcodeInformation(data);
 					}else if(data.status == 'NO_DATA_FOUND'){
 						alert("No Data Found against this Barcode.");
+						var headerBackBtn=defaultPagePath+'backbtnPage.html';
+							var pageRef=defaultPagePath+'category.html';
+							 j('#mainHeader').load(headerBackBtn);
+							 j('#mainContainer').load(pageRef);
+							  appPageHistory.push(pageRef);
 					}else if(data.status == 'SUCESS_WITH_INVALID_EMP'){
 						alert("Asset not allocated to you");
+						var headerBackBtn=defaultPagePath+'backbtnPage.html';
+							var pageRef=defaultPagePath+'category.html';
+							 j('#mainHeader').load(headerBackBtn);
+							 j('#mainContainer').load(pageRef);
+							  appPageHistory.push(pageRef);
 					}
 				},
 			 error:function(data) {
@@ -293,15 +303,15 @@ function commanLogin(){
 								"</div></td>").appendTo(trBreak);
 			
 			j("</tr>").appendTo(tBody);				
-			
-			var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
-			
-				j("<td style='height:20%; width:15%'><div class='leftTD'><input type='button' class='btn btn-info' id='approve' value='Approve'><br/>" +
-					"</div></td>").appendTo(tBody);
-						
-				j("<td style='height:20%; width:15%'><div class='leftTD'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
-					"</div></td>").appendTo(tBody);
-					
+			if(data.assetPhysicalVerificationStatus == 'S'){
+				var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
+				
+					j("<td style='height:20%; width:15%'><div class='leftTD'><input type='button' class='btn btn-info' id='approve' value='Approve'><br/>" +
+						"</div></td>").appendTo(tBody);
+							
+					j("<td style='height:20%; width:15%'><div class='leftTD'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
+						"</div></td>").appendTo(tBody);
+			}
 			j("</tr>").appendTo(tBody);			
 			
 			var trBreak = j("<tr>").appendTo(tBody).attr('id','trBreak');
@@ -320,8 +330,8 @@ function commanLogin(){
 				j('#mainHeader').load(headerBackBtn, function() {
 					j('#mainContainer').load(pageRef, function() {
 						mytable.appendTo("#barcodebox");
-							j("#approve").attr("onclick", "physicalVerification('"+data+"')");
-							j("#cancel").attr("onclick", "cancelPhysicalVerification('"+data+"')");
+							j("#approve").attr("onclick", "updatePhysicalVerification('"+data.uniqueCode+"')");
+							j("#cancel").attr("onclick", "cancel()");
 					});
 					
 				});
@@ -330,12 +340,40 @@ function commanLogin(){
 		
 	}
 
-	function physicalVerification(data){
-		alert("inside physicalVerification");
-		alert(data);
+function updatePhysicalVerification(uniqueCode){
+		var jsonToBeSend=new Object();
+		jsonToBeSend["assetNo"] = uniqueCode;
+		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
+		jsonToBeSend["command"] = "updateBarcodeInformation";
+		j('#loading').show();
+		 j.ajax({
+         url: urlPath+"BarcodeWebservice",
+         type: 'POST',
+         dataType: 'json',
+         crossDomain: true,
+         data: JSON.stringify(jsonToBeSend),
+         success: function(data) {
+					if (data.status == 'SUCESS'){
+						alert("Asset Physical Verification Done Sucessfully.");
+					}else if(data.status == 'NO_DATA_FOUND'){
+						alert("Can not Update Asset Physical Verification.");
+					}
+					var headerBackBtn=defaultPagePath+'backbtnPage.html';
+					var pageRef=defaultPagePath+'category.html';
+					 j('#mainHeader').load(headerBackBtn);
+					 j('#mainContainer').load(pageRef);
+					  appPageHistory.push(pageRef);
+				},
+			 error:function(data) {
+			   j('#loading').hide();
+			 }
+		});
 	}
 	
-	function cancelPhysicalVerification(data){
-		alert("inside cancelPhysicalVerification");
-		alert(data);
+	function cancel(data){
+		var headerBackBtn=defaultPagePath+'backbtnPage.html';
+		var pageRef=defaultPagePath+'category.html';
+		 j('#mainHeader').load(headerBackBtn);
+		 j('#mainContainer').load(pageRef);
+		  appPageHistory.push(pageRef);
 	}
