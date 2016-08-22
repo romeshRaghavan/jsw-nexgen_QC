@@ -354,6 +354,7 @@ function updatePhysicalVerification(uniqueCode){
          crossDomain: true,
          data: JSON.stringify(jsonToBeSend),
          success: function(data) {
+         		alert("data.status : "+data.status);
 					if (data.status == 'SUCESS'){
 						alert("Asset Physical Verification Done Sucessfully.");
 					}else if(data.status == 'NO_DATA_FOUND'){
