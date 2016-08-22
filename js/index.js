@@ -224,40 +224,40 @@ function commanLogin(){
 			
 			var trClassCode = j("<tr>").appendTo(tBody).attr('id','classCode');
 				
-				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Class Code : </label>" +
+				j("<td style='height:5%; width:35%'><div ><font style='font-weight: 800'> Class Code : </font>" +
 								"</div></td>").appendTo(trClassCode);
 								
-				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.classCode+"</label>" +
+				j("<td style='height:5%; width:65%'><div ><font style='font-weight: 800'>"+data.classCode+"</font>" +
 						"</div></td>").appendTo(trClassCode);
 						
 			j("</tr>").appendTo(tBody);
 					
 			var trSubClassCode = j("<tr>").appendTo(tBody).attr('id','trSubClassCode');
 				
-				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Sub Class Code : </label>" +
+				j("<td style='height:5%; width:35%'><div ><font style='font-weight: 800'> Sub Class Code : </font>" +
 								"</div></td>").appendTo(trSubClassCode);
 								
-				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.subClassCode+"</label>" +
+				j("<td style='height:5%; width:65%'><div ><font style='font-weight: 800'>"+data.subClassCode+"</font>" +
 						"</div></td>").appendTo(trSubClassCode);
 						
 			j("</tr>").appendTo(tBody);
 
 			var trUniqueCode = j("<tr>").appendTo(tBody).attr('id','trUniqueCode');
 				
-				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Unique Code : </label>" +
+				j("<td style='height:5%; width:35%'><div ><font style='font-weight: 800'> Unique Code : </font>" +
 								"</div></td>").appendTo(trUniqueCode);
 								
-				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.uniqueCode+"</label>" +
+				j("<td style='height:5%; width:65%'><div ><font style='font-weight: 800'>"+data.uniqueCode+"</font>" +
 						"</div></td>").appendTo(trUniqueCode);
 						
 			j("</tr>").appendTo(tBody);
 
 			var trTypeOfAllocation = j("<tr>").appendTo(tBody).attr('id','trTypeOfAllocation');
 				
-				j("<td style='height:5%; width:35%'><div ><label style='font-weight: 800'> Type of Allocation : </label>" +
+				j("<td style='height:5%; width:35%'><div ><font style='font-weight: 800'> Type of Allocation : </font>" +
 								"</div></td>").appendTo(trTypeOfAllocation);
 								
-				j("<td style='height:5%; width:65%'><div ><label style='font-weight: 800'>"+data.typeOfAllocation+"</label>" +
+				j("<td style='height:5%; width:65%'><div ><font style='font-weight: 800'>"+data.typeOfAllocation+"</font>" +
 						"</div></td>").appendTo(trTypeOfAllocation);
 						
 			j("</tr>").appendTo(tBody);	
