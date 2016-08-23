@@ -99,10 +99,10 @@ function getUserID() {
 			appPageHistory.pop();
 			var len=appPageHistory.length;
 			var pg=appPageHistory[len-1];
-			if(pg=="app/pages/barcodeInformation.html"){
+			/*if(pg=="app/pages/barcodeInformation.html"){
 				
 				j('#mainHeader').load(headerCategory);
-			}
+			}*/
 			if(!(pg==null)){ 
 				j('#mainContainer').load(pg);
 			}
@@ -133,9 +133,9 @@ function goBackEvent() {
 				//navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
 			}else{
 				var pg=appPageHistory[len-1];
-				if(pg=="app/pages/addAnExpense.html"){ 
+				if(pg=="app/pages/barcodeInformation.html"){
 					
-					j('#mainHeader').load(headerBackBtn);
+					j('#mainHeader').load(headerCategory);
 				}else if(pg=="app/pages/category.html"){
 					
 					j('#mainHeader').load(headerCatMsg);
