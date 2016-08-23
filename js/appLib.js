@@ -85,7 +85,7 @@ function getUserID() {
 	var loginPath=defaultPagePath+'loginPage.html';
 	var headerBackBtn=defaultPagePath+'backbtnPage.html';
 	var headerCategory=defaultPagePath+'category.html';
-	
+	alert("goBack : "+goToPage);
 	if(currentUser==''){
 		j('#mainContainer').load(loginPath);
 	}else{
@@ -123,7 +123,7 @@ function goBackEvent() {
 		//To check if the page that needs to be displayed is login page. So 'historylength-2'
 		var historylength=appPageHistory.length;
 		var goToPage=appPageHistory[historylength-2];
-
+		alert("goBackEvent : "+goToPage);
 		if(goToPage!==null && goToPage==loginPath){
 			return 0;
 		}else{
