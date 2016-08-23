@@ -27,12 +27,7 @@
     <preference name="android-installLocation" value="auto" />
    <preference name="phonegap-version" value="cli-5.2.0" />
    <preference name="loadUrlTimeoutValue" value="700000" />
-    
-  
-     <feature name="http://api.phonegap.com/1.0/device" />
-
-        
-
+    <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
@@ -57,7 +52,6 @@
     <gap:plugin name="org.apache.cordova.vibration" /> 
     <gap:plugin name="org.apache.cordova.file"/>
     <gap:plugin name="org.apache.cordova.file-transfer"/>
-   
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />
     <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> -->
@@ -96,9 +90,6 @@
     <gap:splash gap:platform="blackberry" src="www/res/screen/blackberry/screen-225.png" />
     <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <plugin name="cordova-plugin-whitelist" version="1" />
-
-    <plugin name="info.asankan.phonegap.smsplugin" spec="0.1.0" source="pgb" />
-
     <access origin="*" />
     
     <allow-intent href="http://*/*" />
