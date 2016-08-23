@@ -5,7 +5,6 @@ cordova.plugins.barcodeScanner.scan(
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);*/
-                alert("Cancelled: " + result.cancelled);
                 if(!result.cancelled){
                    barcodeWebservice(result.cancelled,result.text);
                 }else if(result.cancelled){
