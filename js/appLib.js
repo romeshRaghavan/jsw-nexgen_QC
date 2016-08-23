@@ -86,13 +86,14 @@ function getUserID() {
 	var headerBackBtn=defaultPagePath+'backbtnPage.html';
 	var headerCategory=defaultPagePath+'category.html';
 	alert("goBack : "+goToPage);
+	alert("currentUser : "+currentUser);
 	if(currentUser==''){
 		j('#mainContainer').load(loginPath);
 	}else{
 		//To check if the page that needs to be displayed is login page. So 'historylength-2'
 		var historylength=appPageHistory.length;
 		var goToPage=appPageHistory[historylength-2];
-
+alert("goBack goToPage : "+goToPage)
 		if(goToPage!==null && goToPage==loginPath){
 			return 0;
 		}else{
@@ -101,10 +102,10 @@ function getUserID() {
 			var pg=appPageHistory[len-1];
 			if(pg=="app/pages/barcodeInformation.html"){
 				
-				j('#mainHeader').load(headerCategory);
+			//	j('#mainHeader').load(headerCategory);
 			}
 			if(!(pg==null)){ 
-				j('#mainContainer').load(pg);
+			//	j('#mainContainer').load(pg);
 			}
 		}
 	}
@@ -145,7 +146,7 @@ function goBackEvent() {
 				//	forceCloseDropdown();
 				}
 				if(!(pg==null)){ 
-					j('#mainContainer').load(pg);
+				//	j('#mainContainer').load(pg);
 				}
 			}
 		}
