@@ -93,7 +93,7 @@ function login()
          data: JSON.stringify(jsonToBeSend),
          success: function(data) {
 					if (data.status == 'SUCESS_WITH_VALID_EMP'){
-						if(data.assetPhysicalVerificationStatus == 'S'){
+						if(data.assetPhysicalVerificationStatus == 'S' || data.assetPhysicalVerificationStatus == 'C'){
 							getBarcodeInformation(data);
 						}else{
 							alert("This Asset has not been allocated to you or has not been sent for Physical Verification to you.");
