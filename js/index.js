@@ -102,7 +102,7 @@ function login()
 							 j('#mainContainer').load(pageRef);
 							  appPageHistory.push(pageRef);
 					}else if(data.status == 'SUCESS_WITH_INVALID_EMP'){
-						alert("Asset not allocated to you");
+						alert("Asset not allocated to you or asset not been sent for verification");
 						var headerBackBtn=defaultPagePath+'backbtnPage.html';
 							var pageRef=defaultPagePath+'category.html';
 							 j('#mainHeader').load(headerBackBtn);
@@ -125,8 +125,6 @@ function createBarcode(){
 				j('#mainContainer').load(pageRef);
 			});
 		appPageHistory.push(pageRef);
-		/*var data1 = 'Cla Ed-EC--Calddc-28-07-00984C12-35';
-		createBarcodeInformationTable(data1);*/
 	}
 	
 function commanLogin(){
@@ -304,14 +302,13 @@ function updatePhysicalVerification(uniqueCode){
          crossDomain: true,
          data: JSON.stringify(jsonToBeSend),
          success: function(data) {
-         		alert("data.status : "+data.status);
 					if (data.status == 'SUCESS'){
-						alert("Asset Physical Verification Done Sucessfully.");
+						successMessage = "Asset Physical Verification Done Sucessfully.";
 					}else if(data.status == 'FAILURE'){
-						alert("Can not Update Asset Physical Verification.");
+						successMessage = "Oops!! Something went wrong. Please contact system administrator";
 					}
 					var headerBackBtn=defaultPagePath+'backbtnPage.html';
-					var pageRef=defaultPagePath+'category.html';
+					var pageRef=defaultPagePath+'success.html';
 					 j('#mainHeader').load(headerBackBtn);
 					 j('#mainContainer').load(pageRef);
 					  appPageHistory.push(pageRef);
