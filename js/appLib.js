@@ -129,18 +129,20 @@ function goBackEvent() {
 		}else{
 			appPageHistory.pop();
 			var len=appPageHistory.length;
+			alert("len : "+len);
 			if(len == 0){
 				navigator.app.exitApp();
 				navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
 			}else{
 				var pg=appPageHistory[len-1];
+				alert("pg : "+pg);
 				if(pg=="app/pages/barcodeInformation.html"){
 					
-					j('#mainHeader').load(headerCategory);
+				//	j('#mainHeader').load(headerCategory);
 				}else if(pg=="app/pages/category.html"){
 					
-					j('#mainHeader').load(headerCatMsg);
-					forceCloseDropdown();
+				//	j('#mainHeader').load(headerCatMsg);
+				//	forceCloseDropdown();
 				}
 				if(!(pg==null)){ 
 					j('#mainContainer').load(pg);
