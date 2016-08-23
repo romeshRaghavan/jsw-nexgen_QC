@@ -93,21 +93,16 @@ function login()
          data: JSON.stringify(jsonToBeSend),
          success: function(data) {
 					if (data.status == 'SUCESS_WITH_VALID_EMP'){
-						getBarcodeInformation(data);
+						if(data.assetPhysicalVerificationStatus == 'S')
+							getBarcodeInformation(data);
+						else
+							cancel();
 					}else if(data.status == 'NO_DATA_FOUND'){
 						alert("No Data Found against this Barcode.");
-						var headerBackBtn=defaultPagePath+'backbtnPage.html';
-							var pageRef=defaultPagePath+'category.html';
-							 j('#mainHeader').load(headerBackBtn);
-							 j('#mainContainer').load(pageRef);
-							  appPageHistory.push(pageRef);
+						cancel();
 					}else if(data.status == 'SUCESS_WITH_INVALID_EMP'){
 						alert("Asset not allocated to you or asset not been sent for verification");
-						var headerBackBtn=defaultPagePath+'backbtnPage.html';
-							var pageRef=defaultPagePath+'category.html';
-							 j('#mainHeader').load(headerBackBtn);
-							 j('#mainContainer').load(pageRef);
-							  appPageHistory.push(pageRef);
+						cancel();
 					}
 				},
 			 error:function(data) {
