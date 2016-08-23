@@ -134,9 +134,6 @@ function goBackEvent() {
 				if(pg=="app/pages/barcodeInformation.html"){
 					
 					j('#mainHeader').load(headerCategory);
-				}else if(pg=="app/pages/category.html"){
-					
-					j('#mainHeader').load(headerCatMsg);
 				}
 				alert("pg : "+pg);
 				if(!(pg==null) && !(pg=="app/pages/category.html")){ 
