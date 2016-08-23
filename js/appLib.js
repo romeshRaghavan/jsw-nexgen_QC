@@ -85,15 +85,12 @@ function getUserID() {
 	var loginPath=defaultPagePath+'loginPage.html';
 	var headerBackBtn=defaultPagePath+'backbtnPage.html';
 	var headerCategory=defaultPagePath+'category.html';
-	alert("goBack : "+goToPage);
-	alert("currentUser : "+currentUser);
 	if(currentUser==''){
 		j('#mainContainer').load(loginPath);
 	}else{
 		//To check if the page that needs to be displayed is login page. So 'historylength-2'
 		var historylength=appPageHistory.length;
 		var goToPage=appPageHistory[historylength-2];
-alert("goBack goToPage : "+goToPage)
 		if(goToPage!==null && goToPage==loginPath){
 			return 0;
 		}else{
@@ -102,17 +99,16 @@ alert("goBack goToPage : "+goToPage)
 			var pg=appPageHistory[len-1];
 			if(pg=="app/pages/barcodeInformation.html"){
 				
-			//	j('#mainHeader').load(headerCategory);
+				j('#mainHeader').load(headerCategory);
 			}
-			if(!(pg==null)){ 
-			//	j('#mainContainer').load(pg);
+			if(!(pg==null) && !(pg=="app/pages/category.html")){ 
+				j('#mainContainer').load(pg);
 			}
 		}
 	}
 	}
  
 function goBackEvent() {
-	alert("goBackEvent")
 	var currentUser=getUserID();
 	var loginPath=defaultPagePath+'loginPage.html';
 	var headerBackBtn=defaultPagePath+'backbtnPage.html';
@@ -124,29 +120,25 @@ function goBackEvent() {
 		//To check if the page that needs to be displayed is login page. So 'historylength-2'
 		var historylength=appPageHistory.length;
 		var goToPage=appPageHistory[historylength-2];
-		alert("goBackEvent : "+goToPage);
 		if(goToPage!==null && goToPage==loginPath){
 			return 0;
 		}else{
 			appPageHistory.pop();
 			var len=appPageHistory.length;
-			alert("len : "+len);
 			if(len == 0){
 				navigator.app.exitApp();
 				navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
 			}else{
 				var pg=appPageHistory[len-1];
-				alert("pg : "+pg);
 				if(pg=="app/pages/barcodeInformation.html"){
 					
-				//	j('#mainHeader').load(headerCategory);
+					j('#mainHeader').load(headerCategory);
 				}else if(pg=="app/pages/category.html"){
 					
-				//	j('#mainHeader').load(headerCatMsg);
-				//	forceCloseDropdown();
+					j('#mainHeader').load(headerCatMsg);
 				}
-				if(!(pg==null)){ 
-				//	j('#mainContainer').load(pg);
+				if(!(pg==null) && !(pg=="app/pages/category.html")){ 
+					j('#mainContainer').load(pg);
 				}
 			}
 		}
