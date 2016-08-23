@@ -130,6 +130,7 @@ function goBackEvent() {
 				navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
 			}else{
 				var pg=appPageHistory[len-1];
+					alert("pg : "+pg);
 				if(pg=="app/pages/barcodeInformation.html"){
 					
 					j('#mainHeader').load(headerCategory);
@@ -137,6 +138,7 @@ function goBackEvent() {
 					
 					j('#mainHeader').load(headerCatMsg);
 				}
+				alert("pg : "+pg);
 				if(!(pg==null) && !(pg=="app/pages/category.html")){ 
 					j('#mainContainer').load(pg);
 				}
