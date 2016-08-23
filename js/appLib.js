@@ -112,7 +112,7 @@ function goBackEvent() {
 	var currentUser=getUserID();
 	var loginPath=defaultPagePath+'loginPage.html';
 	var headerBackBtn=defaultPagePath+'backbtnPage.html';
-	var headerCatMsg=defaultPagePath+'categoryMsgPage.html';
+	var headerCategory=defaultPagePath+'category.html';
 	
 	if(currentUser==''){
 		j('#mainContainer').load(loginPath);
@@ -131,12 +131,16 @@ function goBackEvent() {
 			}else{
 				var pg=appPageHistory[len-1];
 					alert("pg : "+pg);
-				if(pg=="app/pages/barcodeInformation.html"){
+				/*if(pg=="app/pages/barcodeInformation.html"){
+					
+					j('#mainHeader').load(headerCategory);
+				}*/
+				if(pg=="app/pages/category.html"){
 					
 					j('#mainHeader').load(headerCategory);
 				}
 				alert("pg : "+pg);
-				if(!(pg==null) && !(pg=="app/pages/category.html")){ 
+				if(!(pg==null)){ 
 					j('#mainContainer').load(pg);
 				}
 			}
