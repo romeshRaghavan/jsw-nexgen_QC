@@ -130,16 +130,10 @@ function goBackEvent() {
 				navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
 			}else{
 				var pg=appPageHistory[len-1];
-					alert("pg : "+pg);
-				/*if(pg=="app/pages/barcodeInformation.html"){
-					
-					j('#mainHeader').load(headerCategory);
-				}*/
 				if(pg=="app/pages/category.html"){
 					
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
 				}
-				alert("pg : "+pg);
 				if(!(pg==null)){ 
 					j('#mainContainer').load(pg);
 				}
