@@ -38,7 +38,6 @@ function login()
     jsonToBeSend["user"] = userName.value;
     jsonToBeSend["pass"] = password.value;
    	var headerBackBtn=defaultPagePath+'backbtnPageWithoutGoBack.html';
-   	alert("headerBackBtn : "+headerBackBtn);
 	var pageRef=defaultPagePath+'category.html';
 	//urlPath=window.localStorage.getItem("urlPath");
 	j('#loading').show();
@@ -175,7 +174,7 @@ function commanLogin(){
 			pgRef=defaultPagePath+'loginPageResetPswd.html';
 		}else if(window.localStorage.getItem("UserStatus")=='Valid'){
 			pgRef=defaultPagePath+'category.html';
-			headerBackBtn=defaultPagePath+'categoryMsgPage.html';
+			headerBackBtn=defaultPagePath+'backbtnPageWithoutGoBack.html';
 		}else{
 			headerBackBtn=defaultPagePath+'expenzingImagePage.html';
 		pgRef=defaultPagePath+'loginPage.html';
@@ -215,7 +214,6 @@ function commanLogin(){
  }
  
 	function getBarcodeInformation(data){
-		alert("getBarcodeInformation");
 		mytable = j('<table></table>');
 		var tBody = j("<tbody>").appendTo(mytable).attr('id','tbody');
 			
@@ -274,7 +272,6 @@ function commanLogin(){
 		
 			var headerBackBtn=defaultPagePath+'backbtnPage.html';
 			var pageRef=defaultPagePath+'barcodeInformation.html';
-			alert("pageRef : "+pageRef);
 			j(document).ready(function() {
 				j('#mainHeader').load(headerBackBtn, function() {
 					j('#mainContainer').load(pageRef, function() {
@@ -320,9 +317,9 @@ function updatePhysicalVerification(uniqueCode){
 	}
 	
 	function cancel(){
-		var headerBackBtn=defaultPagePath+'backbtnPage.html';
+		var backbtnPageWithoutGoBack=defaultPagePath+'backbtnPageWithoutGoBack.html';
 		var pageRef=defaultPagePath+'category.html';
-		 j('#mainHeader').load(headerBackBtn);
+		 j('#mainHeader').load(backbtnPageWithoutGoBack);
 		 j('#mainContainer').load(pageRef);
 		  appPageHistory.push(pageRef);
 	}
