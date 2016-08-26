@@ -214,6 +214,7 @@ function commanLogin(){
  }
  
 	function getBarcodeInformation(data){
+		alert("getBarcodeInformation");
 		mytable = j('<table></table>');
 		var tBody = j("<tbody>").appendTo(mytable).attr('id','tbody');
 			
@@ -272,6 +273,7 @@ function commanLogin(){
 		
 			var headerBackBtn=defaultPagePath+'backbtnPage.html';
 			var pageRef=defaultPagePath+'barcodeInformation.html';
+			alert("pageRef : "+pageRef);
 			j(document).ready(function() {
 				j('#mainHeader').load(headerBackBtn, function() {
 					j('#mainContainer').load(pageRef, function() {
