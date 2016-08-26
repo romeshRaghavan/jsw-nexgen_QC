@@ -38,6 +38,7 @@ function login()
     jsonToBeSend["user"] = userName.value;
     jsonToBeSend["pass"] = password.value;
    	var headerBackBtn=defaultPagePath+'backbtnPageWithoutGoBack.html';
+   	alert("headerBackBtn : "+headerBackBtn);
 	var pageRef=defaultPagePath+'category.html';
 	//urlPath=window.localStorage.getItem("urlPath");
 	j('#loading').show();
