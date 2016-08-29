@@ -101,7 +101,11 @@ function getUserID() {
 				
 				j('#mainHeader').load(headerBackBtnWithoutGoBack);
 			}
-			if(!(pg==null)){ 
+			if(pg=="app/pages/barcodeInformation.html"){
+				j('#mainContainer').load("app/pages/category.html");
+				j('#mainHeader').load(headerBackBtnWithoutGoBack);
+			}
+			if(!(pg==null) && !(pg == "app/pages/category.html")){ 
 				j('#mainContainer').load(pg);
 			}
 		}
@@ -134,7 +138,11 @@ function goBackEvent() {
 					
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
 				}
-				if(!(pg==null)){ 
+				if(pg=="app/pages/barcodeInformation.html"){
+					j('#mainContainer').load("app/pages/category.html");
+					j('#mainHeader').load(headerBackBtnWithoutGoBack);
+				}
+				if(!(pg==null) && !(pg == "app/pages/category.html")){ 
 					j('#mainContainer').load(pg);
 				}
 			}
