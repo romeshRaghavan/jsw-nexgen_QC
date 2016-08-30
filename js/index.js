@@ -75,6 +75,8 @@ function login(){
         		 j('#loginErrorMsg').hide().fadeIn('slow').delay(2000).fadeOut('slow');
         		 j('#loading').hide();
         	 }else{
+        	 	 successMessage = "Wrong UserName or Password";
+			 document.getElementById("loginErrorMsg").innerHTML = successMessage;
         		 j('#loading').hide();
         		 alert("Please enter correct username or password");
         	 }},
