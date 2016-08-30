@@ -78,7 +78,6 @@ function login(){
         	 	 successMessage = "Wrong UserName or Password";
 			 document.getElementById("loginErrorMsg").innerHTML = successMessage;
         		 j('#loading').hide();
-        		 alert("Please enter correct username or password");
         	 }},
          error:function(data) {
 		   j('#loading').hide();
