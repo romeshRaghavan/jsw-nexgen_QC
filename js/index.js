@@ -140,6 +140,7 @@ function commanLogin(){
 	var jsonToDomainNameSend = new Object();
 	jsonToDomainNameSend["userName"] = domainName;
 	//jsonToDomainNameSend["mobilePlatform"] = device.platform;
+	alert("platform : "+device.platform);
 	if(device.platform == "Android"){
 		jsonToDomainNameSend["mobilePlatform"] = "ANDROID_FOR_ASSET";
 	}else if(device.platform == "Window"){
