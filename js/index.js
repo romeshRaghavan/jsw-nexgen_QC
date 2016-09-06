@@ -24,6 +24,7 @@ var fileTempCameraTS ="";
 var fileTempGalleryBE ="";
 var fileTempGalleryTS ="";
 var mapToCalcERAmt = new Map();
+var barCodeStatus = "false";
 
 function login(){
    	if(document.getElementById("userName")!=null){
@@ -124,6 +125,7 @@ function login(){
 }
 
 function createBarcode(){
+	if(barCodeStatus == "false"){
 		var headerBackBtn=defaultPagePath+'backbtnPage.html';
 			var pageRef=defaultPagePath+'barcode.html';
 			j(document).ready(function() {
@@ -131,7 +133,9 @@ function createBarcode(){
 				j('#mainContainer').load(pageRef);
 			});
 		appPageHistory.push(pageRef);
+		barCodeStatus = "true";
 	}
+}
 	
 function commanLogin(){
  	var userName = document.getElementById("userName");
