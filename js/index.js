@@ -89,6 +89,7 @@ function login(){
   function barcodeWebservice(cancelledStatus,assetNo)
 {
 	/*var pageRef=defaultPagePath+'barcodeInformation.html';*/
+	alert("barcodewebservice");
    	if(cancelledStatus == false){
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = assetNo;
@@ -144,7 +145,7 @@ function commanLogin(){
 	var jsonToDomainNameSend = new Object();
 	jsonToDomainNameSend["userName"] = domainName;
 	//jsonToDomainNameSend["mobilePlatform"] = device.platform;
-	alert("platform : "+device.platform);
+	//alert("platform : "+device.platform);
 	if(device.platform == "Android"){
 		jsonToDomainNameSend["mobilePlatform"] = "ANDROID_FOR_ASSET";
 	}else if(device.platform == "Window"){
