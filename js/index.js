@@ -125,7 +125,7 @@ function login(){
 }
 
 function createBarcode(){
-	if(barCodeStatus == "false"){
+//	if(barCodeStatus == "false"){
 		var headerBackBtn=defaultPagePath+'backbtnPage.html';
 			var pageRef=defaultPagePath+'barcode.html';
 			j(document).ready(function() {
@@ -134,7 +134,7 @@ function createBarcode(){
 			});
 		appPageHistory.push(pageRef);
 		barCodeStatus = "true";
-	}
+//	}
 }
 	
 function commanLogin(){
