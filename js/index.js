@@ -89,7 +89,7 @@ function login(){
   function barcodeWebservice(cancelledStatus,assetNo)
 {
 	/*var pageRef=defaultPagePath+'barcodeInformation.html';*/
-	alert("barcodewebservice");
+	//alert("barcodewebservice");
    	if(cancelledStatus == false){
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = assetNo;
