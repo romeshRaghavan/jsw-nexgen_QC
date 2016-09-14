@@ -409,7 +409,7 @@ function validateValidMobileUser(){
 
 		         },
 		         error:function(data) {
-				  alert("Error aalay --> "+data);
+				  alert("Error aalay --> "+data.error);
 		         }
 		   });
 		}
