@@ -344,3 +344,72 @@ function updatePhysicalVerification(uniqueCode){
 		 j('#mainContainer').load(pageRef);
 		  appPageHistory.push(pageRef);
 	}
+
+function validateValidMobileUser(){
+		var pgRef;
+		var headerBackBtn;
+		var jsonToBeSend=new Object();
+		alert("empid : "+window.localStorage.getItem('EmployeeId'));
+		alert("UserStatus : "+window.localStorage.getItem('UserStatus'))
+		if(window.localStorage.getItem("EmployeeId")!= null
+			&& (window.localStorage.getItem("UserStatus")==null || window.localStorage.getItem("UserStatus")=='Valid')){
+			jsonToBeSend["user"]=window.localStorage.getItem("UserName");
+			jsonToBeSend["pass"]=window.localStorage.getItem("Password");
+			alert("UserName : "+window.localStorage.getItem('UserName'))
+			alert("Password : "+window.localStorage.getItem('Password'))
+			j.ajax({
+		         url:  window.localStorage.getItem("urlPath")+"ValidateUserWebservice",
+		         type: 'POST',
+		         dataType: 'json',
+		         crossDomain: true,
+		         data: JSON.stringify(jsonToBeSend),
+		         success: function(data) {
+		         	
+		           if(data.type == 'S'){
+		         	 	setUserStatusInLocalStorage("Valid");
+		           }else if(data.type == 'R'){
+		         	 	successMessage = data.Message;
+		         	 	headerBackBtn=defaultPagePath+'expenzingImagePage.html';
+						pgRef=defaultPagePath+'loginPage.html';
+						setUserStatusInLocalStorage("Invalid");
+						j('#mainHeader').load(headerBackBtn);
+	             		j('#mainContainer').load(pgRef,function() {
+	  						document.getElementById("loginErrorMsg").innerHTML = successMessage;
+			 			   j('#loginErrorMsg').hide().fadeIn('slow').delay(4000).fadeOut('slow');
+			 			   j('#loading').hide();
+						});
+					  
+		           }else if(data.Status == 'InactiveUser'){
+					   successMessage = data.Message;
+		         	 	headerBackBtn=defaultPagePath+'expenzingImagePage.html';
+						pgRef=defaultPagePath+'loginPage.html';
+						 j('#mainHeader').load(headerBackBtn);
+						 setUserStatusInLocalStorage("Inactive");
+						 resetUserSessionDetails();
+	             		j('#mainContainer').load(pgRef,function() {
+	  						document.getElementById("loginErrorMsg").innerHTML = successMessage;
+			 			   j('#loginErrorMsg').hide().fadeIn('slow').delay(4000).fadeOut('slow');
+			 			   j('#loading').hide();
+						});
+		           }else if(data.Status == 'ChangedUserCredentials'){
+					    successMessage = data.Message;
+		         	 	headerBackBtn=defaultPagePath+'expenzingImagePage.html';
+						pgRef=defaultPagePath+'loginPageResetPswd.html';
+						 setUserStatusInLocalStorage("ResetPswd");
+						j('#mainHeader').load(headerBackBtn);
+	             		j('#mainContainer').load(pgRef,function() {
+	  						document.getElementById("loginErrorMsg").innerHTML = successMessage;
+	  						document.getElementById("userNameLabel").innerHTML=window.localStorage.getItem("UserName");
+	  						document.getElementById("userName").value=window.localStorage.getItem("UserName");
+			 			   j('#loginErrorMsg').hide().fadeIn('slow').delay(4000).fadeOut('slow');
+			 			   j('#loading').hide();
+						});
+		           }
+
+		         },
+		         error:function(data) {
+				  
+		         }
+		   });
+		}
+	}
