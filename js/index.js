@@ -412,7 +412,6 @@ function validateValidMobileUser(){
 				  alert("Error aalay --> "+data.error);
 				   alert(textStatus);
 				   alert(errorThrown);
-				  jqXHR, textStatus, errorThrown
 		         }
 		   });
 		}
