@@ -356,8 +356,9 @@ function validateValidMobileUser(){
 			&& (window.localStorage.getItem("UserStatus")==null || window.localStorage.getItem("UserStatus")=='Valid')){
 			jsonToBeSend["user"]=window.localStorage.getItem("UserName");
 			jsonToBeSend["pass"]=window.localStorage.getItem("Password");
-			alert("UserName : "+window.localStorage.getItem('UserName'))
-			alert("Password : "+window.localStorage.getItem('Password'))
+			alert("UserName : "+window.localStorage.getItem('UserName'));
+			alert("Password : "+window.localStorage.getItem('Password'));
+			alert("Pass : "+jsonToBeSend['pass']);
 			j.ajax({
 		         url:  window.localStorage.getItem("urlPath")+"ValidateUserWebservice",
 		         type: 'POST',
