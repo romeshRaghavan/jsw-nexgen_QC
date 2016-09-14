@@ -39,7 +39,7 @@ var app = {
 		  document.addEventListener("backbutton", function(e){
 		  	goBackEvent();
 		  }, false);
-			  
+		 validateValidMobileUser();  
 		  }
 };
 
@@ -56,13 +56,18 @@ function onConfirmExit(button) {
 function setUserSessionDetails(val,userJSON){
 	 //window.localStorage.setItem("TrRole",val.TrRole);
 	 window.localStorage.setItem("EmployeeId",val.empId);
-	// window.localStorage.setItem("FirstName",val.FirstName);
 	 window.localStorage.setItem("LastName",val.empName);
-	 window.localStorage.setItem("GradeID",val.GradeID);
-	 //window.localStorage.setItem("BudgetingStatus",val.BudgetingStatus);
-	// window.localStorage.setItem("UnitId",val.UnitId);	
-	// window.localStorage.setItem("UserName",userJSON["user"]);
-	// window.localStorage.setItem("Password",userJSON["pass"]);
+	 window.localStorage.setItem("UserName",userJSON["user"]);
+	 window.localStorage.setItem("Password",userJSON["pass"]);
+}
+
+
+function resetUserSessionDetails(){
+	 //window.localStorage.removeItem("TrRole");
+	 window.localStorage.removeItem("EmployeeId");
+	 window.localStorage.removeItem("LastName");
+	 window.localStorage.removeItem("UserName");
+	 window.localStorage.removeItem("Password");
 	
 }
 
