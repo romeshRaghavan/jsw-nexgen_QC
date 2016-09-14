@@ -363,7 +363,6 @@ function validateValidMobileUser(){
 		         url:  window.localStorage.getItem("urlPath")+"ValidateUserWebservice",
 		         type: 'POST',
 		         dataType: 'json',
-		         crossDomain: true,
 		         data: JSON.stringify(jsonToBeSend),
 		         success: function(data) {
 		         	
