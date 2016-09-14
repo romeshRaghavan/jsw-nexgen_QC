@@ -408,8 +408,11 @@ function validateValidMobileUser(){
 		           }
 
 		         },
-		         error:function(data) {
+		         error:function(jqXHR, textStatus, errorThrown) {
 				  alert("Error aalay --> "+data.error);
+				   alert(textStatus);
+				   alert(errorThrown);
+				  jqXHR, textStatus, errorThrown
 		         }
 		   });
 		}
