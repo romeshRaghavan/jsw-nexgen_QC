@@ -350,7 +350,8 @@ function validateValidMobileUser(){
 		var headerBackBtn;
 		var jsonToBeSend=new Object();
 		alert("empid : "+window.localStorage.getItem('EmployeeId'));
-		alert("UserStatus : "+window.localStorage.getItem('UserStatus'))
+		alert("UserStatus : "+window.localStorage.getItem('UserStatus'));
+		alert("urlpath : "+window.localStorage.getItem('urlPath'));
 		if(window.localStorage.getItem("EmployeeId")!= null
 			&& (window.localStorage.getItem("UserStatus")==null || window.localStorage.getItem("UserStatus")=='Valid')){
 			jsonToBeSend["user"]=window.localStorage.getItem("UserName");
