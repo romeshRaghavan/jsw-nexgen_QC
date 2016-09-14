@@ -359,10 +359,12 @@ function validateValidMobileUser(){
 			alert("UserName : "+window.localStorage.getItem('UserName'));
 			alert("Password : "+window.localStorage.getItem('Password'));
 			alert("Pass : "+jsonToBeSend['pass']);
+			var urlPath = window.localStorage.getItem("urlPath");
 			j.ajax({
-		         url:  window.localStorage.getItem("urlPath")+"ValidateUserWebservice",
+				 url: urlPath+"ValidateUserWebservice",
 		         type: 'POST',
 		         dataType: 'json',
+		         crossDomain: true,
 		         data: JSON.stringify(jsonToBeSend),
 		         success: function(data) {
 		         	
@@ -409,7 +411,7 @@ function validateValidMobileUser(){
 
 		         },
 		         error:function(data, textStatus, errorThrown) {
-				  alert("Error aalay --> "+data.error);
+				   alert("Error aalay --> "+data.error);
 				   alert(textStatus);
 				   alert(errorThrown);
 		         }
