@@ -408,7 +408,7 @@ function validateValidMobileUser(){
 		           }
 
 		         },
-		         error:function(jqXHR, textStatus, errorThrown) {
+		         error:function(data, textStatus, errorThrown) {
 				  alert("Error aalay --> "+data.error);
 				   alert(textStatus);
 				   alert(errorThrown);
