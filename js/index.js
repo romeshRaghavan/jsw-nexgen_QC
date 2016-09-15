@@ -54,6 +54,7 @@ function login(){
         		 j('#mainContainer').load(pageRef);
         		 appPageHistory.push(pageRef);
         		 setUserSessionDetails(data,jsonToBeSend);
+        		 setUserStatusInLocalStorage("Valid");
         	 }else if(data.type == 'R'){
         		 successMessage = data.message;
         		 if(successMessage.length == 0)
