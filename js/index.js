@@ -95,6 +95,7 @@ function login(){
 		jsonToBeSend["assetNo"] = assetNo;
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
 		jsonToBeSend["command"] = "getBarcodeInformation";
+		jsonToBeSend["initiationId"] = "";
 		j('#loading').show();
 		 j.ajax({
          url: urlPath+"BarcodeWebservice",
@@ -144,7 +145,7 @@ function commanLogin(){
  	var domainName = userNameValue.split('@')[1];
 	var jsonToDomainNameSend = new Object();
 	jsonToDomainNameSend["userName"] = domainName;
-	//jsonToDomainNameSend["mobilePlatform"] = device.platform;
+	jsonToDomainNameSend["mobilePlatform"] = device.platform;
 	//alert("platform : "+device.platform);
 	if(device.platform == "Android"){
 		jsonToDomainNameSend["mobilePlatform"] = "ANDROID_FOR_ASSET";
@@ -303,7 +304,7 @@ function commanLogin(){
 				j('#mainHeader').load(headerBackBtn, function() {
 					j('#mainContainer').load(pageRef, function() {
 						mytable.appendTo("#barcodebox");
-							j("#approve").attr("onclick", "updatePhysicalVerification('"+data.uniqueCode+"')");
+							j("#approve").attr("onclick", "updatePhysicalVerification('"+data.uniqueCode+"','"+data.initiationId+"')");
 							j("#cancel").attr("onclick", "cancel()");
 					});
 					
@@ -313,10 +314,11 @@ function commanLogin(){
 		
 	}
 
-function updatePhysicalVerification(uniqueCode){
+function updatePhysicalVerification(uniqueCode,initiationId){
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = uniqueCode;
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
+		jsonToBeSend["initiationId"] = initiationId;
 		jsonToBeSend["command"] = "updateBarcodeInformation";
 		j('#loading').show();
 		 j.ajax({
@@ -416,4 +418,4 @@ function validateValidMobileUser(){
 		         }
 		   });
 		}
-	}
+}
