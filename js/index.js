@@ -349,16 +349,10 @@ function validateValidMobileUser(){
 		var pgRef;
 		var headerBackBtn;
 		var jsonToBeSend=new Object();
-		alert("empid : "+window.localStorage.getItem('EmployeeId'));
-		alert("UserStatus : "+window.localStorage.getItem('UserStatus'));
-		alert("urlpath : "+window.localStorage.getItem('urlPath'));
 		if(window.localStorage.getItem("EmployeeId")!= null
 			&& (window.localStorage.getItem("UserStatus")==null || window.localStorage.getItem("UserStatus")=='Valid')){
 			jsonToBeSend["user"]=window.localStorage.getItem("UserName");
 			jsonToBeSend["pass"]=window.localStorage.getItem("Password");
-			alert("UserName : "+window.localStorage.getItem('UserName'));
-			alert("Password : "+window.localStorage.getItem('Password'));
-			alert("Pass : "+jsonToBeSend['pass']);
 			var urlPath = window.localStorage.getItem("urlPath");
 			j.ajax({
 				 url: urlPath+"ValidateUserWebservice",
@@ -367,8 +361,9 @@ function validateValidMobileUser(){
 		         crossDomain: true,
 		         data: JSON.stringify(jsonToBeSend),
 		         success: function(data) {
-		         	
+		        	alert("data.type : "+data.type);
 		           if(data.type == 'S'){
+		           	alert("in sucess")
 		         	 	setUserStatusInLocalStorage("Valid");
 		           }else if(data.type == 'R'){
 		         	 	successMessage = data.Message;
@@ -411,9 +406,7 @@ function validateValidMobileUser(){
 
 		         },
 		         error:function(data, textStatus, errorThrown) {
-				   alert("Error aalay --> "+data.error);
-				   alert(textStatus);
-				   alert(errorThrown);
+				j('#loading').hide();   
 		         }
 		   });
 		}
