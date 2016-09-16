@@ -191,25 +191,19 @@ function commanLogin(){
  function init() {
 	 var pgRef;
 	var headerBackBtn;
-	alert("1")
 	if(window.localStorage.getItem("EmployeeId")!= null){
-		alert("2")
 		if(window.localStorage.getItem("UserStatus")=='ResetPswd'){
-			alert("3")
 			headerBackBtn=defaultPagePath+'expenzingImagePage.html';
 			pgRef=defaultPagePath+'loginPageResetPswd.html';
 		}else if(window.localStorage.getItem("UserStatus")=='Valid'){
-			alert("4")
 			pgRef=defaultPagePath+'category.html';
 			headerBackBtn=defaultPagePath+'backbtnPageWithoutGoBack.html';
 		}else{
-			alert("5")
 			headerBackBtn=defaultPagePath+'expenzingImagePage.html';
 		pgRef=defaultPagePath+'loginPage.html';
 		}
 
 	}else{
-		alert("6")
 		headerBackBtn=defaultPagePath+'expenzingImagePage.html';
 		pgRef=defaultPagePath+'loginPage.html';
 	}
@@ -289,7 +283,7 @@ function commanLogin(){
 			if(data.assetPhysicalVerificationStatus == 'S'){
 				var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
 				
-					j("<td style='height:20%; width:30%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Approve'><br/>" +
+					j("<td style='height:20%; width:30%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Physically Verify'><br/>" +
 						"</div></td>").appendTo(tBody);
 							
 					j("<td style='height:20%; width:30%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
@@ -370,9 +364,7 @@ function validateValidMobileUser(){
 		         crossDomain: true,
 		         data: JSON.stringify(jsonToBeSend),
 		         success: function(data) {
-		        	alert("data.type : "+data.type);
 		           if(data.type == 'S'){
-		           	alert("in sucess")
 		         	 	setUserStatusInLocalStorage("Valid");
 		           }else if(data.type == 'R'){
 		         	 	successMessage = data.Message;
