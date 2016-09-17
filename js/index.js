@@ -40,7 +40,6 @@ function login(){
    	var headerBackBtn=defaultPagePath+'backbtnPageWithoutGoBack.html';
 	var pageRef=defaultPagePath+'category.html';
 	urlPath=window.localStorage.getItem("urlPath");
-	alert("url path : "+urlPath+'LoginWebService')
 	j('#loading').show();
     j.ajax({
          url: urlPath+"LoginWebService",
