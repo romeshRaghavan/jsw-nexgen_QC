@@ -283,7 +283,7 @@ function commanLogin(){
 			if(data.assetPhysicalVerificationStatus == 'S'){
 				var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
 				
-					j("<td style='height:20%; width:30%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Physically Verify'><br/>" +
+					j("<td style='height:20%; width:60%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Physically Verify'><br/>" +
 						"</div></td>").appendTo(tBody);
 							
 					j("<td style='height:20%; width:30%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
