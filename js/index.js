@@ -94,6 +94,7 @@ function login(){
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = assetNo;
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
+		alert("employee id : "+window.localStorage.getItem('EmployeeId'));
 		jsonToBeSend["command"] = "getBarcodeInformation";
 		jsonToBeSend["initiationId"] = "";
 		j('#loading').show();
