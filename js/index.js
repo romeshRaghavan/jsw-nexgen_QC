@@ -48,6 +48,7 @@ function login(){
          crossDomain: true,
          data: JSON.stringify(jsonToBeSend),
          success: function(data) {
+         	alert("data.type : "+data.type);
         	 if (data.type == 'S'){
         		 j('#mainHeader').load(headerBackBtn);
         		 j('#mainContainer').load(pageRef);
@@ -55,6 +56,7 @@ function login(){
         		 setUserSessionDetails(data,jsonToBeSend);
         		 setUserStatusInLocalStorage("Valid");
         	 }else if(data.type == 'R'){
+        	 	alert("in")
         		 successMessage = data.message;
         		 if(successMessage.length == 0)
         			 successMessage = "Asset Owner Role Missing";
