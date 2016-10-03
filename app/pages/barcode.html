@@ -1,6 +1,7 @@
 <script type="text/javascript">
 cordova.plugins.barcodeScanner.scan(
       function (result) {
+            alert("in");
           /*alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
@@ -17,8 +18,6 @@ cordova.plugins.barcodeScanner.scan(
       {
           "preferFrontCamera" : true, // iOS and Android
           "showFlipCameraButton" : true, // iOS and Android
-          "prompt" : "Place a barcode inside the scan area", // supported on Android only
-          "orientation" : "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
       }
     );
 </script>
