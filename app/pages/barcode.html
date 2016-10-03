@@ -16,8 +16,7 @@ cordova.plugins.barcodeScanner.scan(
           alert("Scanning failed: " + error);
       } ,
       {
-          "preferFrontCamera" : true, // iOS and Android
-          "showFlipCameraButton" : true, // iOS and Android
+          "formats" : "EAN_13,EAN_8,QR_CODE"
       }
     );
 </script>
