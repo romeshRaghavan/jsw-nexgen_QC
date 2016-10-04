@@ -1,24 +1,23 @@
 <script type="text/javascript">
-      try {
-                cordova.plugins.barcodeScanner.scan(                    
-                  function (result) {
-                      alert("We got a barcode\n" +
-                            "Result: " + result.text + "\n" +
-                            "Format: " + result.format + "\n" +
-                            "Cancelled: " + result.cancelled);
-                            if(!result.cancelled){
-                               barcodeWebservice(result.cancelled,result.text);
-                            }else if(result.cancelled){
-                                  alert("cancel result : "+result.cancelled);
-                                 // cancel();
-                            }
-                  }, 
-                  function (error) {
-                      alert("Scanning failed: " + error);
-                  }
-                );
-            }
-      catch(err) {
-        alert(err.message);
-      }
+cordova.plugins.barcodeScanner.scan(
+      function (result) {
+          /*alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);*/
+                if(!result.cancelled){
+                   barcodeWebservice(result.cancelled,result.text);
+                }else if(result.cancelled){
+                     // cancel();
+                }
+      }, 
+      function (error) {
+          alert("Scanning failed: " + error);
+      } 
+    );
 </script>
+  <div class="modal-body clearfix">
+ 	 <div style="display:none" id="loading" >
+              <img src="images/loading2.gif" id="loading-image" alt="Loading......" >
+		</div>
+	</div>
