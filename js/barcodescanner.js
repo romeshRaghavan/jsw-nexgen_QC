@@ -62,14 +62,17 @@
 
         /**
          * Read code from scanner.
-         *
-         * @param {Function} successCallback This function will recieve a result object: {
-         *        text : '12345-mock',    // The code that was scanned.
-         *        format : 'FORMAT_NAME', // Code format.
-         *        cancelled : true/false, // Was canceled.
-         *    }
-         * @param {Function} errorCallback
-         */
+         **/
+         @param {Function} successCallback 
+         //This function will recieve a result 
+         object: {
+             alert("successCallback");
+                 //text : '12345-mock',    // The code that was scanned.
+                 //format : 'FORMAT_NAME', // Code format.
+                // cancelled : true/false, // Was canceled.
+             }
+          @param {Function} errorCallback
+         
         BarcodeScanner.prototype.scan = function (successCallback, errorCallback, config) {
 
             if(config instanceof Array) {
