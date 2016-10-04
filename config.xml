@@ -56,6 +56,7 @@
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />
     <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> -->
     <gap:plugin name="net.roughshod.plugins.barcodescanner" source="pgb" />
+    <gap:plugin name="org.cloudsky.cordovaplugins.zbar" spec="tjwoon/csZBar" source="git"/>
     <!-- <plugin name="File" value="CDVFile" />
     <plugin name="FileTransfer" value="CDVFileTransfer" /> -->
     <!--icon src="/icon.png" gap:role="default"/-->
