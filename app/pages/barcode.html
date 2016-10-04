@@ -1,6 +1,9 @@
 <script type="text/javascript">
       try {
-                cordova.plugins.barcodeScanner.scan(
+                cloudSky.zBar.scan(
+                      {
+                             //drawSight: true 
+                      },
                   function (result) {
                       alert("We got a barcode\n" +
                             "Result: " + result.text + "\n" +
