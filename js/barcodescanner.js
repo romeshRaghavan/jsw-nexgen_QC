@@ -71,7 +71,7 @@
          * @param {Function} errorCallback
          **/
         BarcodeScanner.prototype.scan = function (successCallback, errorCallback, config) {
-alert("123");
+
             if(config instanceof Array) {
                 // do nothing
             } else {
