@@ -359,13 +359,15 @@ function validateValidMobileUser(){
 			jsonToBeSend["user"]=window.localStorage.getItem("UserName");
 			jsonToBeSend["pass"]=window.localStorage.getItem("Password");
 			var urlPath = window.localStorage.getItem("urlPath");
+			alert("urlPath : "+urlPath);
 			j.ajax({
-				 url: urlPath+"ValidateUserWebservice",
+			 url: urlPath+"ValidateUserWebservice",
 		         type: 'POST',
 		         dataType: 'json',
 		         crossDomain: true,
 		         data: JSON.stringify(jsonToBeSend),
 		         success: function(data) {
+				 alert("data.type : "+data.type)
 		           if(data.type == 'S'){
 		         	 	setUserStatusInLocalStorage("Valid");
 		           }else if(data.type == 'R'){
