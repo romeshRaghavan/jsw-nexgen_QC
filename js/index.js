@@ -2,8 +2,8 @@ var j = jQuery.noConflict();
 var defaultPagePath='app/pages/';
 var headerMsg = "Expenzing";
 var urlPath;
-//var urlPath = 'http://10.1.114.182:7003/TnEV1_0AWeb/WebService/Login/';
-var WebServicePath = 'http://1.255.255.169:8085/NexstepWebService/mobileLinkResolver.service';
+var urlPath = 'http://10.1.114.181:7003/TnEV1_0AWeb/WebService/Login/';
+//var WebServicePath = 'http://1.255.255.169:8085/NexstepWebService/mobileLinkResolver.service';
 var clickedFlagCar = false;
 var clickedFlagTicket = false;
 var clickedFlagHotel = false;
@@ -40,7 +40,7 @@ function login(){
    	var headerBackBtn=defaultPagePath+'backbtnPageWithoutGoBack.html';
 	var pageRef=defaultPagePath+'category.html';
 	urlPath=window.localStorage.getItem("urlPath");
-	//setUrlPathLocalStorage(urlPath);
+	setUrlPathLocalStorage(urlPath);
 	j('#loading').show();
     j.ajax({
          url: urlPath+"LoginWebService",
