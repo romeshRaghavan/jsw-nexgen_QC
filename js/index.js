@@ -371,7 +371,7 @@ function validateValidMobileUser(){
 		           if(data.type == 'S'){
 		         	 	setUserStatusInLocalStorage("Valid");
 		           }else if(data.type == 'R'){
-		         	 	successMessage = data.Message;
+		         	 	successMessage = data.message;
 		         	 	headerBackBtn=defaultPagePath+'expenzingImagePage.html';
 						pgRef=defaultPagePath+'loginPage.html';
 						setUserStatusInLocalStorage("Invalid");
@@ -383,7 +383,7 @@ function validateValidMobileUser(){
 						});
 					  
 		           }else if(data.Status == 'InactiveUser'){
-					   successMessage = data.Message;
+					   successMessage = data.message;
 		         	 	headerBackBtn=defaultPagePath+'expenzingImagePage.html';
 						pgRef=defaultPagePath+'loginPage.html';
 						 j('#mainHeader').load(headerBackBtn);
@@ -395,7 +395,7 @@ function validateValidMobileUser(){
 			 			   j('#loading').hide();
 						});
 		           }else if(data.Status == 'ChangedUserCredentials'){
-					    successMessage = data.Message;
+					    successMessage = data.message;
 		         	 	headerBackBtn=defaultPagePath+'expenzingImagePage.html';
 						pgRef=defaultPagePath+'loginPageResetPswd.html';
 						 setUserStatusInLocalStorage("ResetPswd");
