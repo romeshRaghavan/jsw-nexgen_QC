@@ -31,27 +31,28 @@
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
-    <gap:plugin name="cordova-plugin-file-battery-status" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-core.camera" source="npm"/>
+    
+    <gap:plugin name="cordova-plugin-battery-status" source="npm"/>
+    <gap:plugin name="cordova-plugin-core.camera" source="npm"/>
     <!-- <plugin name="org.apache.cordova.camera" spec="0.2.3" source="pgb" /> -->
-    <gap:plugin name="cordova-plugin-file-media-capture" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-console" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-contacts" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-device" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-device-motion" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-device-orientation" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-dialogs" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-file" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-file-transfer" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-geolocation" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-globalization" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-inappbrowser" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-media" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-network-information" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-splashscreen" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-vibration" source="npm" /> 
-    <gap:plugin name="cordova-plugin-file-file" source="npm"/>
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm"/>
+    <gap:plugin name="cordova-plugin-media-capture" source="npm"/>
+    <gap:plugin name="cordova-plugin-console" source="npm"/>
+    <gap:plugin name="cordova-plugin-contacts" source="npm"/>
+    <gap:plugin name="cordova-plugin-device" source="npm"/>
+    <gap:plugin name="cordova-plugin-device-motion" source="npm"/>
+    <gap:plugin name="cordova-plugin-device-orientation" source="npm"/>
+    <gap:plugin name="cordova-plugin-dialogs" source="npm"/>
+    <gap:plugin name="cordova-plugin-file" source="npm"/>
+    <gap:plugin name="cordova-plugin-transfer" source="npm"/>
+    <gap:plugin name="cordova-plugin-geolocation" source="npm"/>
+    <gap:plugin name="cordova-plugin-globalization" source="npm"/>
+    <gap:plugin name="cordova-plugin-inappbrowser" source="npm"/>
+    <gap:plugin name="cordova-plugin-media" source="npm"/>
+    <gap:plugin name="cordova-plugin-network-information" source="npm"/>
+    <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
+    <gap:plugin name="cordova-plugin-vibration" source="npm" /> 
+    <gap:plugin name="cordova-plugin-file" source="npm"/>
+    <gap:plugin name="cordova-plugin-transfer" source="npm"/>
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> -->
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />
     <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> -->
