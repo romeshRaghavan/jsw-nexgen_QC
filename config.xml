@@ -53,8 +53,8 @@
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> 
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />-->
     <gap:plugin name="cordova-plugin-imagepicker" source="npm"/>
-    <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> 
-    <gap:plugin name="cordova-plugin-barcodescanner"/>-->
+    <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> -->
+    <gap:plugin name="cordova-plugin-barcodescanner" source="npm" />
     <!-- <plugin name="File" value="CDVFile" />
     <plugin name="FileTransfer" value="CDVFileTransfer" /> -->
     <!--icon src="/icon.png" gap:role="default"/-->
