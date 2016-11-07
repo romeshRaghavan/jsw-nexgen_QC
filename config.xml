@@ -27,6 +27,7 @@
     <preference name="android-installLocation" value="auto" />
    <preference name="phonegap-version" value="cli-6.3.0" />
    <preference name="loadUrlTimeoutValue" value="700000" />
+    <preference name="android-build-tool" value="gradle" />
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/file"/>
     <feature name="http://api.phonegap.com/1.0/media"/>
@@ -53,9 +54,9 @@
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> 
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />-->
     <gap:plugin name="cordova-plugin-imagepicker" source="npm"/>
-    <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> 
-    <gap:plugin name="phonegap-plugin-barcodescanner" source="npm"/>-->
-    <gap:plugin name="net.roughshod.plugins.barcodescanner" source="npm" />
+    <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> -->
+    <gap:plugin name="phonegap-plugin-barcodescanner" source="npm"/>
+     <!--<gap:plugin name="net.roughshod.plugins.barcodescanner" source="npm" />-->
     <!-- <plugin name="File" value="CDVFile" />
     <plugin name="FileTransfer" value="CDVFileTransfer" /> -->
     <!--icon src="/icon.png" gap:role="default"/-->
