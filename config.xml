@@ -53,7 +53,7 @@
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />-->
     <gap:plugin name="cordova-plugin-imagepicker" source="npm"/>
     <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> -->
-	<gap:plugin name="net.roughshod.plugins.barcodescanner" source="pgb" />
+	<gap:plugin name="net.roughshod.plugins.barcodescanner" source="npm" />
     <!--<gap:plugin name="cordova-plugin-barcodescanner" source="npm"/>-->
     <gap:plugin name="cordova-dialogs" source="npm"/>
     <!-- <plugin name="File" value="CDVFile" />
