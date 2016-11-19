@@ -55,8 +55,8 @@
     <!--<gap:plugin name="com.phonegap.plugins.barcodescanner" spec="2.2.0" source="pgb" /> 
      <gap:plugin name="net.roughshod.plugins.barcodescanner" spec="3.0.0" source="pgb" />-->
     <gap:plugin name="cordova-plugin-barcodescanner" source="npm"/>
-    <gap:plugin name="cordova-dialogs" source="npm"/>
-    <!-- <plugin name="File" value="CDVFile" />
+    <!--<gap:plugin name="cordova-dialogs" source="npm"/>
+     <plugin name="File" value="CDVFile" />
     <plugin name="FileTransfer" value="CDVFileTransfer" /> -->
     <!--icon src="/icon.png" gap:role="default"/-->
     <icon src="icon.png" />
