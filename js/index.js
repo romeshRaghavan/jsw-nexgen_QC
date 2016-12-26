@@ -41,7 +41,6 @@ function login(){
    	var headerBackBtn=defaultPagePath+'backbtnPageWithoutGoBack.html';
 	var pageRef=defaultPagePath+'category.html';
 	//urlPath=window.localStorage.getItem("urlPath");
-	alert("urlPath "+urlPath);
 	setUrlPathLocalStorage(urlPath);
 	j('#loading').show();
     j.ajax({
