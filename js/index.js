@@ -2,7 +2,7 @@ var j = jQuery.noConflict();
 var defaultPagePath='app/pages/';
 var headerMsg = "Expenzing";
 //var urlPath;
-var urlPath = 'http://1.255.255.18:8096/TnEV1_0AWeb/WebService/Login/';
+var urlPath = 'http://1.255.255.169:8081/TnEV1_0AWeb/WebService/Login/';
 //var urlPath = 'http://1.255.255.169:8081/TnEV1_0AWeb/WebService/Login/';
 var WebServicePath = 'http://1.255.255.169:8085/NexstepWebService/mobileLinkResolver.service';
 var clickedFlagCar = false;
@@ -285,9 +285,12 @@ function commanLogin(){
 			if(data.assetPhysicalVerificationStatus == 'S'){
 				var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
 				
-					j("<td style='height:20%; width:60%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Physically Verify'><br/>" +
+					j("<td style='height:20%; width:35%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='reject' value='Physically Verify'><br/>" +
 						"</div></td>").appendTo(tBody);
 							
+					j("<td style='height:20%; width:35%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Not Verify'><br/>" +
+						"</div></td>").appendTo(tBody);
+						
 					j("<td style='height:20%; width:30%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
 						"</div></td>").appendTo(tBody);
 			}
@@ -301,7 +304,7 @@ function commanLogin(){
 				j('#mainHeader').load(headerBackBtn, function() {
 					j('#mainContainer').load(pageRef, function() {
 						mytable.appendTo("#barcodebox");
-							j("#approve").attr("onclick", "updatePhysicalVerification('"+data.uniqueCode+"','"+data.initiationId+"')");
+							j("#approve").attr("onclick", "updatePhysicalVerification('"+data.uniqueCode+"','"+data.initiationId+"','C','')");
 							j("#cancel").attr("onclick", "cancel()");
 					});
 					
@@ -311,12 +314,16 @@ function commanLogin(){
 		
 	}
 
-function updatePhysicalVerification(uniqueCode,initiationId){
+function updatePhysicalVerification(uniqueCode,initiationId,physicalVerificationStatus,rejectionComment){
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = uniqueCode;
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
 		jsonToBeSend["initiationId"] = initiationId;
 		jsonToBeSend["command"] = "updateBarcodeInformation";
+		jsonToBeSend["physicalVerificationStatus"] = physicalVerificationStatus;
+		jsonToBeSend["rejectionComment"] = rejectionComment;
+		alert("physicalVerificationStatus : "+jsonToBeSend["physicalVerificationStatus"]);
+		alert("rejectionComment : "+jsonToBeSend["rejectionComment"]);
 		j('#loading').show();
 		 j.ajax({
          url: urlPath+"BarcodeWebservice",
