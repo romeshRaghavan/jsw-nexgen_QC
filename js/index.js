@@ -242,7 +242,7 @@ function commanLogin(){
 		mytable = j('<table></table>');
 		var tBody = j("<tbody>").appendTo(mytable).attr('id','tbody');
 			
-			var trClassCode = j("<tr>").appendTo(tBody).attr('id','classCode');
+			var trClassCode = j("<tr>").appendTo(tBody).attr('id','trClassCode');
 				
 				j("<td style='height:5%; width:35%'><div style='border-bottom: 0px'><label style='font-weight: 800'> Class Code : </label>" +
 								"</div></td>").appendTo(trClassCode);
@@ -282,16 +282,40 @@ function commanLogin(){
 						
 			j("</tr>").appendTo(tBody);	
 			
+			var trRejectionComment = j("<tr>").appendTo(tBody)
+							.attr('id','trRejectionComment')
+							.attr('style','height:1%; display:none');
+				
+				j("<td style='height:1%; width:100%'><div style='border-bottom: 0px'><label style='font-weight: 800'> Rejection Comment : </label>" +
+								"</div></td>").appendTo(trRejectionComment);
+			
+			j("</tr>").appendTo(tBody);	
+			
+			var trRejectionCommentTextArea = j("<tr>").appendTo(tBody)
+								.attr('id','trRejectionCommentTextArea')
+								.attr('style','height:5%; display:none');
+											
+				j("<td style='height:5%; width:100%'><div style='border-bottom: 0px'><textarea rows='4' cols='50' id='rejectionComments'></textarea>"+
+						"</div></td>").appendTo(trRejectionCommentTextArea);
+						
+			j("</tr>").appendTo(tBody);	
+		
 			if(data.assetPhysicalVerificationStatus == 'S'){
 				var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
 				
-					j("<td style='height:20%; width:35%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='reject' value='Physically Verify'><br/>" +
+					j("<td style='height:40%; width:20%' id='approveTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Physically Verify'><br/>" +
 						"</div></td>").appendTo(tBody);
 							
-					j("<td style='height:20%; width:35%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Not Verify'><br/>" +
+					j("<td style='height:30%; width:20%' id='getRejectionCommentTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='getRejectionComment' value='Not Verify'><br/>" +
 						"</div></td>").appendTo(tBody);
 						
-					j("<td style='height:20%; width:30%'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
+					j("<td style='height:30%; width:20%' id='cancelTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
+						"</div></td>").appendTo(tBody);
+					
+					j("<td style='display:none; height:30%; width:20%' id='rejectTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='reject' value='Not Verify'><br/>" +
+						"</div></td>").appendTo(tBody);
+					
+					j("<td style='display:none; height:30%; width:20%' id='backToInfoPageTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='backToInfoPage' value='Back'><br/>" +
 						"</div></td>").appendTo(tBody);
 			}
 		
@@ -304,8 +328,11 @@ function commanLogin(){
 				j('#mainHeader').load(headerBackBtn, function() {
 					j('#mainContainer').load(pageRef, function() {
 						mytable.appendTo("#barcodebox");
-							j("#approve").attr("onclick", "updatePhysicalVerification('"+data.uniqueCode+"','"+data.initiationId+"','C','')");
-							j("#cancel").attr("onclick", "cancel()");
+						j("#approve").attr("onclick", "updatePhysicalVerification('"+data.uniqueCode+"','"+data.initiationId+"','C')");
+						j("#getRejectionComment").attr("onclick", "getRejectionComment()");
+						j("#cancel").attr("onclick", "cancel()");
+						j("#reject").attr("onclick", "updatePhysicalVerification('"+data.uniqueCode+"','"+data.initiationId+"','N')");
+						j("#backToInfoPage").attr("onclick", "backToInfoPage()");
 					});
 					
 				});
@@ -420,4 +447,32 @@ function validateValidMobileUser(){
 		         }
 		   });
 		}
+}
+
+function getRejectionComment(){
+	document.getElementById('approveTd').style.display = "none";
+	document.getElementById('getRejectionCommentTd').style.display = "none";
+	document.getElementById('cancelTd').style.display = "none";
+	document.getElementById('trClassCode').style.display = "none";
+	document.getElementById('trSubClassCode').style.display = "none";
+	document.getElementById('trUniqueCode').style.display = "none";
+	document.getElementById('trTypeOfAllocation').style.display = "none";
+	document.getElementById('trRejectionComment').style.display = "";
+	document.getElementById('trRejectionCommentTextArea').style.display = "";
+	document.getElementById('rejectTd').style.display = "";
+	document.getElementById('backToInfoPageTd').style.display = "";
+}
+
+function backToInfoPage(){
+	document.getElementById('approveTd').style.display = "";
+	document.getElementById('getRejectionCommentTd').style.display = "";
+	document.getElementById('cancelTd').style.display = "";
+	document.getElementById('trClassCode').style.display = "";
+	document.getElementById('trSubClassCode').style.display = "";
+	document.getElementById('trUniqueCode').style.display = "";
+	document.getElementById('trTypeOfAllocation').style.display = "";
+	document.getElementById('trRejectionComment').style.display = "none";
+	document.getElementById('trRejectionCommentTextArea').style.display = "none";
+	document.getElementById('rejectTd').style.display = "none";
+	document.getElementById('backToInfoPageTd').style.display = "none";
 }
