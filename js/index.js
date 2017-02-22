@@ -348,7 +348,7 @@ function updatePhysicalVerification(uniqueCode,initiationId,physicalVerification
 		jsonToBeSend["initiationId"] = initiationId;
 		jsonToBeSend["command"] = "updateBarcodeInformation";
 		jsonToBeSend["physicalVerificationStatus"] = physicalVerificationStatus;
-		jsonToBeSend["rejectionComment"] = rejectionComment;
+		jsonToBeSend["rejectionComment"] = document.getElementById('rejectionComments').value;
 		alert("physicalVerificationStatus : "+jsonToBeSend["physicalVerificationStatus"]);
 		alert("rejectionComment : "+jsonToBeSend["rejectionComment"]);
 		j('#loading').show();
