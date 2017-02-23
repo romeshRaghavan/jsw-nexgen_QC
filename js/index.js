@@ -284,49 +284,49 @@ function commanLogin(){
 			
 			var trRejectionComment = j("<tr>").appendTo(tBody)
 							.attr('id','trRejectionComment')
-							.attr('style','height:1%; display:none');
+							.attr('style','display:none;');
 				
-				j("<td style='height:1%; width:100%'><div style='border-bottom: 0px'><label style='font-weight: 800'> Rejection Comment : </label>" +
+				j("<td style='height:1%; width:100%; padding-left:20px;' colspan='4';><div style='border-bottom: 0px'><label style='font-weight: 800'> Rejection Comment</label>" +
 								"</div></td>").appendTo(trRejectionComment);
 			
 			j("</tr>").appendTo(tBody);	
-			
+
 			var trRejectionCommentTextArea = j("<tr>").appendTo(tBody)
 								.attr('id','trRejectionCommentTextArea')
-								.attr('style','height:5%; display:none');
+								.attr('style','display:none;');
 											
-				j("<td style='height:5%; width:100%'><div style='border-bottom: 0px'><textarea rows='4' cols='50' id='rejectionComments'></textarea>"+
+				j("<td style='height:1%; width:100%; padding-left:20px;' colspan='4';><div style='border-bottom: 0px; padding-top: 0px;'><textarea rows='4' cols='40' id='rejectionComments' style='height:1%; width:100%'></textarea>"+
 						"</div></td>").appendTo(trRejectionCommentTextArea);
 						
-			j("</tr>").appendTo(tBody);	
+			j("</tr>").appendTo(tBody);		
 		
 			if(data.assetPhysicalVerificationStatus == 'S'){
 				var trApprove = j("<tr>").appendTo(tBody).attr('id','trApprove');		
-					var tdApprove = j("<td colspan='3'; style='height:1%; width:100%'>").appendTo(trApprove).attr('id','tdApprove');	
+					var tdApprove = j("<td colspan='4'; style='height:1%; width:100%'>").appendTo(trApprove).attr('id','tdApprove');	
 						var myButtonTable = j("<table style='width:100%'>").appendTo(tdApprove).attr('id','myButtonTable');		
 							var tButtonBody = j("<tbody>").appendTo(myButtonTable).attr('id','tButtonBody');
 								var trButtons = j("<tr>").appendTo(tButtonBody).attr('id','trButtons');
 								
-									j("<td style='height:30%; width:30%' id='approveTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='approve' value='Verify'><br/>" +
+									j("<td style='height:20%; width:30%' id='approveTd'><div style='border-bottom: 0px'><input type='button' style='width:80%' class='btn btn-info' id='approve' value='Verify'><br/>" +
 										"</div></td>").appendTo(trButtons);
 											
-									j("<td style='height:30%; width:30%' id='getRejectionCommentTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='getRejectionComment' value='Not Verify'><br/>" +
+									j("<td style='height:20%; width:40%' id='getRejectionCommentTd'><div style='border-bottom: 0px'><input type='button' style='width:80%' class='btn btn-info' id='getRejectionComment' value='Not Verify'><br/>" +
 										"</div></td>").appendTo(trButtons);
 										
-									j("<td style='height:30%; width:30%' id='cancelTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='cancel' value='Cancel'><br/>" +
+									j("<td style='height:20%; width:30%' id='cancelTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' style='width:80%' id='cancel' value='Cancel'><br/>" +
 										"</div></td>").appendTo(trButtons);
 									
-									j("<td style='display:none; height:30%; width:40%; text-align: right;' id='rejectTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='reject' value='Not Verify'><br/>" +
+									j("<td style='display:none; height:20%; width:50%; text-align: right;' id='rejectTd'><div style='border-bottom: 0px'><input type='button' style='width:60%' class='btn btn-info' id='reject' value='Not Verify'><br/>" +
 										"</div></td>").appendTo(trButtons);
 									
-									j("<td style='display:none; height:30%; width:40% text-align: left;' id='backToInfoPageTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' id='backToInfoPage' value='Back'><br/>" +
+									j("<td style='display:none; height:20%; width:40% text-align: left;' id='backToInfoPageTd'><div style='border-bottom: 0px'><input type='button' style='width:50%' class='btn btn-info' id='backToInfoPage' value='Back'><br/>" +
 										"</div></td>").appendTo(trButtons);
 							
 								j("</tr>").appendTo(tButtonBody);	
 							j("</tbody>").appendTo(myButtonTable);
 						j("</table>").appendTo(tdApprove);
 					j("</td>").appendTo(trApprove);	
-				j("</tr>").appendTo(tBody);	
+				j("</tr>").appendTo(tBody);		
 			}
 		
 		j("</tbody>").appendTo(mytable);
