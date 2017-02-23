@@ -298,7 +298,7 @@ function commanLogin(){
 							.attr('id','trRejectionComment')
 							.attr('style','display:none;');
 				
-				j("<td style='height:1%; width:100%; padding-left:20px;' colspan='4';><div style='border-bottom: 0px'><label style='font-weight: 800'> Rejection Comment</label>" +
+				j("<td style='height:1%; width:100%; padding-left:5%;'><div style='border-bottom: 0px'><label style='font-weight: 800'> Rejection Comment</label>" +
 								"</div></td>").appendTo(trRejectionComment);
 			
 			j("</tr>").appendTo(tBody);	
@@ -307,7 +307,7 @@ function commanLogin(){
 								.attr('id','trRejectionCommentTextArea')
 								.attr('style','display:none;');
 											
-				j("<td style='height:1%; width:100%; padding-left:20px;' colspan='4';><div style='border-bottom: 0px; padding-top: 0px;'><textarea rows='4' cols='40' id='rejectionComments' style='height:1%; width:100%'></textarea>"+
+				j("<td style='height:1%; width:100%; padding-left:5%;'><div style='border-bottom: 0px; padding-top: 0px;'><textarea rows='4' cols='40' id='rejectionComments' style='height:1%; width:100%'></textarea>"+
 						"</div></td>").appendTo(trRejectionCommentTextArea);
 						
 			j("</tr>").appendTo(tBody);		
