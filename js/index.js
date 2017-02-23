@@ -110,6 +110,9 @@ function login(){
 					if (data.status == 'SUCESS_WITH_VALID_EMP'){
 						if(data.assetPhysicalVerificationStatus == 'S' || data.assetPhysicalVerificationStatus == 'C'){
 							getBarcodeInformation(data);
+						}else if(data.assetPhysicalVerificationStatus == 'N'){
+							alert("Physical Verification Process for this asset has already been completed.");
+							cancel();
 						}else{
 							alert("This Asset has not been allocated to you or has not been sent for Physical Verification to you.");
 							cancel();
@@ -328,7 +331,7 @@ function commanLogin(){
 									j("<td style='height:20%; width:30%' id='cancelTd'><div style='border-bottom: 0px'><input type='button' class='btn btn-info' style='width:80%' id='cancel' value='Cancel'><br/>" +
 										"</div></td>").appendTo(trButtons);
 									
-									j("<td style='display:none; height:20%; width:50%; text-align: right;' id='rejectTd'><div style='border-bottom: 0px'><input type='button' style='width:60%' class='btn btn-info' id='reject' value='Not Verify'><br/>" +
+									j("<td style='display:none; height:20%; width:50%; text-align: right;' id='rejectTd'><div style='border-bottom: 0px'><input type='button' style='width:60%' class='btn btn-info' id='reject' value='Submit'><br/>" +
 										"</div></td>").appendTo(trButtons);
 									
 									j("<td style='display:none; height:20%; width:40% text-align: left;' id='backToInfoPageTd'><div style='border-bottom: 0px'><input type='button' style='width:50%' class='btn btn-info' id='backToInfoPage' value='Back'><br/>" +
@@ -371,26 +374,30 @@ function updatePhysicalVerification(uniqueCode,initiationId,physicalVerification
 		jsonToBeSend["command"] = "updateBarcodeInformation";
 		jsonToBeSend["physicalVerificationStatus"] = physicalVerificationStatus;
 		jsonToBeSend["rejectionComment"] = document.getElementById('rejectionComments').value;
-		alert("physicalVerificationStatus : "+jsonToBeSend["physicalVerificationStatus"]);
-		alert("rejectionComment : "+jsonToBeSend["rejectionComment"]);
 		j('#loading').show();
 		 j.ajax({
-         url: urlPath+"BarcodeWebservice",
-         type: 'POST',
-         dataType: 'json',
-         crossDomain: true,
-         data: JSON.stringify(jsonToBeSend),
-         success: function(data) {
-					if (data.status == 'SUCESS'){
+			 url: urlPath+"BarcodeWebservice",
+			 type: 'POST',
+			 dataType: 'json',
+			 crossDomain: true,
+			 data: JSON.stringify(jsonToBeSend),
+			 success: function(data) {
+				if (data.status == 'SUCESS'){
+					if(physicalVerificationStatus == 'N'){
+						successMessage = "Assets have been Successfully sent to Gap Report.";
+					}else{
 						successMessage = "Asset Physical Verification Done Sucessfully.";
-					}else if(data.status == 'FAILURE'){
-						successMessage = "Oops!! Something went wrong. Please contact system administrator";
 					}
-					var headerBackBtn=defaultPagePath+'backbtnPage.html';
-					var pageRef=defaultPagePath+'success.html';
-					 j('#mainHeader').load(headerBackBtn);
-					 j('#mainContainer').load(pageRef);
-					  appPageHistory.push(pageRef);
+				}else if(data.status == 'FAILURE'){
+					successMessage = "Oops!! Something went wrong. Please contact system administrator";
+				}else{
+					successMessage = "Oops!! Something went wrong. Please contact system administrator";
+				}
+				var headerBackBtn=defaultPagePath+'backbtnPage.html';
+				var pageRef=defaultPagePath+'success.html';
+				 j('#mainHeader').load(headerBackBtn);
+				 j('#mainContainer').load(pageRef);
+				  appPageHistory.push(pageRef);
 				},
 			 error:function(data) {
 			   j('#loading').hide();
