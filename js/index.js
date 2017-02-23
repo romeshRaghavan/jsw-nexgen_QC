@@ -244,52 +244,52 @@ function commanLogin(){
 			
 			var trClassCode = j("<tr>").appendTo(tBody).attr('id','trClassCode');
 				
-				j("<td style='height:5%; width:30%'><div style='border-bottom: 0px'><label style='font-weight: 800'> Class Code</label>" +
+				j("<td style='height:5%; width:30%'><div style='border-bottom: 0px; text-align: left;'><label style='font-weight: 800'> Class Code</label>" +
 								"</div></td>").appendTo(trClassCode);
 								
 				j("<td style='height:5%; width:10%'><div style='border-bottom: 0px;'><label style='font-weight: 800'> : </label>" +
 								"</div></td>").appendTo(trClassCode);
 		
-				j("<td style='height:5%; width:60%'><div style='border-bottom: 0px'><label style='font-weight: 800'>"+data.classCode+"</label>" +
+				j("<td style='height:5%; width:60%'><div style='border-bottom: 0px; text-align: left;'><label style='font-weight: 800'>"+data.classCode+"</label>" +
 						"</div></td>").appendTo(trClassCode);
 						
 			j("</tr>").appendTo(tBody);
 					
 			var trSubClassCode = j("<tr>").appendTo(tBody).attr('id','trSubClassCode');
 				
-				j("<td style='height:5%; width:30%'><div style='border-bottom: 0px'><label style='font-weight: 800'> Sub Class Code</label>" +
+				j("<td style='height:5%; width:30%'><div style='border-bottom: 0px; text-align: left;'><label style='font-weight: 800'> Sub Class Code</label>" +
 								"</div></td>").appendTo(trSubClassCode);
 								
 				j("<td style='height:5%; width:10%'><div style='border-bottom: 0px;'><label style='font-weight: 800'> : </label>" +
 								"</div></td>").appendTo(trSubClassCode);
 		
-				j("<td style='height:5%; width:60%'><div style='border-bottom: 0px'><label style='font-weight: 800'>"+data.subClassCode+"</label>" +
+				j("<td style='height:5%; width:60%'><div style='border-bottom: 0px; text-align: left;'><label style='font-weight: 800'>"+data.subClassCode+"</label>" +
 						"</div></td>").appendTo(trSubClassCode);
 						
 			j("</tr>").appendTo(tBody);
 
 			var trUniqueCode = j("<tr>").appendTo(tBody).attr('id','trUniqueCode');
 				
-				j("<td style='height:5%; width:30%'><div style='border-bottom: 0px'><label style='font-weight: 800'> Unique Code</label>" +
+				j("<td style='height:5%; width:30%'><div style='border-bottom: 0px; text-align: left;'><label style='font-weight: 800'> Unique Code</label>" +
 								"</div></td>").appendTo(trUniqueCode);
 		
 				j("<td style='height:5%; width:10%'><div style='border-bottom: 0px;'><label style='font-weight: 800'> : </label>" +
 								"</div></td>").appendTo(trUniqueCode);
 								
-				j("<td style='height:5%; width:60%'><div style='border-bottom: 0px'><label style='font-weight: 800'>"+data.uniqueCode+"</label>" +
+				j("<td style='height:5%; width:60%'><div style='border-bottom: 0px; text-align: left;'><label style='font-weight: 800'>"+data.uniqueCode+"</label>" +
 						"</div></td>").appendTo(trUniqueCode);
 						
 			j("</tr>").appendTo(tBody);
 
 			var trTypeOfAllocation = j("<tr>").appendTo(tBody).attr('id','trTypeOfAllocation');
 				
-				j("<td style='height:5%; width:30%'><div style='border-bottom: 0px'><label style='font-weight: 800'> Type of Allocation</label>" +
+				j("<td style='height:5%; width:30%'><div style='border-bottom: 0px; text-align: left;'><label style='font-weight: 800'> Type of Allocation</label>" +
 								"</div></td>").appendTo(trTypeOfAllocation);
 				
 				j("<td style='height:5%; width:10%'><div style='border-bottom: 0px;'><label style='font-weight: 800'> : </label>" +
 								"</div></td>").appendTo(trTypeOfAllocation);
 		
-				j("<td style='height:5%; width:60%'><div style='border-bottom: 0px'><label style='font-weight: 800'>"+data.typeOfAllocation+"</label>" +
+				j("<td style='height:5%; width:60%'><div style='border-bottom: 0px; text-align: left;'><label style='font-weight: 800'>"+data.typeOfAllocation+"</label>" +
 						"</div></td>").appendTo(trTypeOfAllocation);
 						
 			j("</tr>").appendTo(tBody);	
