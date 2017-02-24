@@ -369,7 +369,7 @@ function commanLogin(){
 function updatePhysicalVerification(uniqueCode,initiationId,physicalVerificationStatus,rejectionComment){
 	if(physicalVerificationStatus == 'C' || 
 	   (physicalVerificationStatus == 'N' && document.getElementById('rejectionComments').value != ""
-	    && document.getElementById('rejectionComments').value.length > 350)){
+	    && document.getElementById('rejectionComments').value.length < 350)){
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = uniqueCode;
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
