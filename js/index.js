@@ -310,7 +310,7 @@ function commanLogin(){
 								.attr('id','trRejectionCommentTextArea')
 								.attr('style','display:none;');
 											
-				j("<td style='height:1%; width:100%; padding-left:5%;'><div style='border-bottom: 0px; padding-top: 0px;'><textarea rows='4' cols='40' id='rejectionComments' style='height:1%; width:100%'></textarea>"+
+				j("<td style='height:1%; width:100%; padding-left:5%;'><div style='border-bottom: 0px; padding-top: 0px;'><textarea rows='4' cols='40' onkeyup='checkMaxSize();' id='rejectionComments' style='height:1%; width:100%'></textarea>"+
 						"</div></td>").appendTo(trRejectionCommentTextArea);
 						
 			j("</tr>").appendTo(tBody);		
@@ -510,4 +510,11 @@ function backToInfoPage(){
 	document.getElementById('rejectTd').style.display = "none";
 	document.getElementById('backToInfoPageTd').style.display = "none";
 	document.getElementById('rejectionComments').value = "";
+}
+
+function checkMaxSize(){
+	if(document.getElementById('rejectionComments').value.length > 350 ){
+		alert("length must be less than 150 charachter");
+		document.getElementById('rejectionComments').value = document.getElementById('rejectionComments').value.substring(0, 350)
+	}
 }
