@@ -514,7 +514,7 @@ function backToInfoPage(){
 
 function checkMaxSize(){
 	if(document.getElementById('rejectionComments').value.length > 350 ){
-		alert("length must be less than 150 charachter");
+		alert("Rejection comments must be less than 350 charachter");
 		document.getElementById('rejectionComments').value = document.getElementById('rejectionComments').value.substring(0, 350)
 	}
 }
