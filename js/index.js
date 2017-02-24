@@ -367,7 +367,8 @@ function commanLogin(){
 	}
 
 function updatePhysicalVerification(uniqueCode,initiationId,physicalVerificationStatus,rejectionComment){
-	if(document.getElementById('rejectionComments').value != ""){
+	if(physicalVerificationStatus == 'C' || 
+	   (physicalVerificationStatus == 'N' && document.getElementById('rejectionComments').value != "")){
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = uniqueCode;
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
