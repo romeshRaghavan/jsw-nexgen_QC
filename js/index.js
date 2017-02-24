@@ -368,7 +368,8 @@ function commanLogin(){
 
 function updatePhysicalVerification(uniqueCode,initiationId,physicalVerificationStatus,rejectionComment){
 	if(physicalVerificationStatus == 'C' || 
-	   (physicalVerificationStatus == 'N' && document.getElementById('rejectionComments').value != "")){
+	   (physicalVerificationStatus == 'N' && document.getElementById('rejectionComments').value != ""
+	    && document.getElementById('rejectionComments').value.length > 350)){
 		var jsonToBeSend=new Object();
 		jsonToBeSend["assetNo"] = uniqueCode;
 		jsonToBeSend["employeeId"] = window.localStorage.getItem("EmployeeId");
@@ -406,7 +407,13 @@ function updatePhysicalVerification(uniqueCode,initiationId,physicalVerification
 			 }
 		});
 		}else{
-			alert("Please fill Rejection comments.");
+			if(document.getElementById('rejectionComments').value != ""
+			   && document.getElementById('rejectionComments').value.length > 350 ){
+				alert("Rejection comments must be less than 350 charachter");
+				document.getElementById('rejectionComments').value = document.getElementById('rejectionComments').value.substring(0, 350);
+			}else{
+				alert("Please fill Proper Rejection comments.");
+			}
 		}
 	}
 	
