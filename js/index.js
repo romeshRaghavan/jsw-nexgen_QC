@@ -2,7 +2,7 @@ var j = jQuery.noConflict();
 var defaultPagePath='app/pages/';
 var headerMsg = "Expenzing";
 //var urlPath;
-var urlPath = 'http://1.255.255.169:8081/TnEV1_0AWeb/WebService/Login/';
+var urlPath = 'http://1.255.255.36:7003/TnEV1_0AWeb/WebService/Login/';
 //var urlPath = 'http://1.255.255.169:8081/TnEV1_0AWeb/WebService/Login/';
 var WebServicePath = 'http://1.255.255.169:8085/NexstepWebService/mobileLinkResolver.service';
 var clickedFlagCar = false;
