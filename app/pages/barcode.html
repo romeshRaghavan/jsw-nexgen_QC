@@ -8,7 +8,7 @@ cordova.plugins.barcodeScanner.scan(
                 if(!result.cancelled){
                    barcodeWebservice(result.cancelled,result.text);
                 }else if(result.cancelled){
-                     // cancel();
+                      cancel();
                 }
       }, 
       function (error) {
