@@ -139,6 +139,7 @@ function goBackEvent() {
 				navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
 			}else{
 				var pg=appPageHistory[len-1];
+				alert(pg);
 				if(pg=="app/pages/category.html"){
 					j('#mainContainer').load("app/pages/category.html");
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
