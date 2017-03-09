@@ -140,7 +140,7 @@ function goBackEvent() {
 			}else{
 				var pg=appPageHistory[len-1];
 				if(pg=="app/pages/category.html"){
-					
+					j('#mainContainer').load("app/pages/category.html");
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
 				}
 				if(pg=="app/pages/barcodeInformation.html"){
