@@ -104,13 +104,20 @@ function getUserID() {
 			var pg=appPageHistory[len-1];
 			if(pg=="app/pages/category.html"){
 				j('#mainHeader').load(headerBackBtnWithoutGoBack);
+				j('#mainContainer').load("app/pages/category.html");
 			}
 			if(pg=="app/pages/barcodeInformation.html"){
 				j('#mainContainer').load("app/pages/category.html");
 				j('#mainHeader').load(headerBackBtnWithoutGoBack);
 			}
 			if(!(pg==null) && !(pg == "app/pages/barcodeInformation.html")){ 
+				j('#mainContainer').load("app/pages/category.html");
 				j('#mainContainer').load(pg);
+			}
+			if((appPageHistory[len]=="app/pages/category.html") 
+				|| (appPageHistory[len]=="app/pages/barcodeInformation.html")){
+				j('#mainHeader').load(headerBackBtnWithoutGoBack);
+				j('#mainContainer').load("app/pages/category.html");
 			}
 		}
 	}
@@ -142,14 +149,20 @@ function goBackEvent() {
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
 				if(pg=="app/pages/category.html"){
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
+					j('#mainContainer').load("app/pages/category.html");
 				}
 				if(pg=="app/pages/barcodeInformation.html"){
-					j('#mainContainer').load("app/pages/category.html");
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
+					j('#mainContainer').load("app/pages/category.html");
 				}
 				if(!(pg==null) && !(pg == "app/pages/barcodeInformation.html")){ 
 					j('#mainContainer').load(pg);
 				}
+				if((appPageHistory[len]=="app/pages/category.html") 
+				   	|| (appPageHistory[len]=="app/pages/barcodeInformation.html")){
+				   	j('#mainHeader').load(headerBackBtnWithoutGoBack);
+					j('#mainContainer').load("app/pages/category.html");
+			   	}
 			}
 		}
 	}
