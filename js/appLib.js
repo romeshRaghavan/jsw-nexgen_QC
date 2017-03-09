@@ -105,13 +105,14 @@ function getUserID() {
 			var pg=appPageHistory[len-1];
 			if(pg=="app/pages/category.html"){
 				j('#mainHeader').load(headerBackBtnWithoutGoBack);
-			}
-			if(pg=="app/pages/barcodeInformation.html"){
+			}else if(pg=="app/pages/barcodeInformation.html"){
 				j('#mainContainer').load("app/pages/category.html");
 				j('#mainHeader').load(headerBackBtnWithoutGoBack);
-			}
-			if(!(pg==null) && !(pg == "app/pages/barcodeInformation.html")){ 
+			}else if(!(pg==null) && !(pg == "app/pages/barcodeInformation.html")){ 
 				j('#mainContainer').load(pg);
+			}else{
+				j('#mainContainer').load("app/pages/category.html");
+				j('#mainHeader').load(headerBackBtnWithoutGoBack);
 			}
 		}
 	}
@@ -142,13 +143,14 @@ function goBackEvent() {
 				var pg=appPageHistory[len-1];
 				if(pg=="app/pages/category.html"){
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
-				}
-				if(pg=="app/pages/barcodeInformation.html"){
+				}else if(pg=="app/pages/barcodeInformation.html"){
 					j('#mainContainer').load("app/pages/category.html");
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
-				}
-				if(!(pg==null) && !(pg == "app/pages/barcodeInformation.html")){ 
+				}else if(!(pg==null) && !(pg == "app/pages/barcodeInformation.html")){ 
 					j('#mainContainer').load(pg);
+				}else{
+					j('#mainContainer').load("app/pages/category.html");
+					j('#mainHeader').load(headerBackBtnWithoutGoBack);
 				}
 			}
 		}
