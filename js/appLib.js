@@ -90,6 +90,7 @@ function getUserID() {
 	var loginPath=defaultPagePath+'loginPage.html';
 	var headerBackBtn=defaultPagePath+'backbtnPage.html';
 	var headerBackBtnWithoutGoBack=defaultPagePath+'backbtnPageWithoutGoBack.html';
+	alert(appPageHistory[len-1]);
 	if(currentUser==''){
 		j('#mainContainer').load(loginPath);
 	}else{
@@ -128,6 +129,7 @@ function goBackEvent() {
 		//To check if the page that needs to be displayed is login page. So 'historylength-2'
 		var historylength=appPageHistory.length;
 		var goToPage=appPageHistory[historylength-2];
+		alert(appPageHistory[len-1]);
 		if(goToPage!==null && goToPage==loginPath){
 			return 0;
 		}else{
@@ -138,7 +140,6 @@ function goBackEvent() {
 				navigator.notification.confirm("Are you sure want to exit from App?", onConfirmExit, "Confirmation", "Yes,No");
 			}else{
 				var pg=appPageHistory[len-1];
-				alert(pg);
 				if(pg=="app/pages/category.html"){
 					j('#mainHeader').load(headerBackBtnWithoutGoBack);
 				}
