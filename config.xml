@@ -24,7 +24,7 @@
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-maxSdkVersion" value="24" />
     <preference name="android-installLocation" value="auto" />
-   <preference name="phonegap-version" value="cli-6.3.0" />
+   <preference name="phonegap-version" value="cli-7.0.1" />
    <preference name="loadUrlTimeoutValue" value="700000" />
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/file"/>
@@ -40,14 +40,8 @@
     <gap:plugin name="cordova-plugin-device-motion" source="npm" />
     <gap:plugin name="cordova-plugin-device-orientation" source="npm" />
     <gap:plugin name="cordova-plugin-dialogs" source="npm" />
-   <gap:plugin name="cordova-plugin-file" source="npm" />
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm" />
-    <gap:plugin name="cordova-plugin-geolocation" source="npm" />
-    <gap:plugin name="cordova-plugin-globalization" source="npm" />
-    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
-    <gap:plugin name="cordova-plugin-media" source="npm" />
-    <gap:plugin name="cordova-plugin-network-information" source="npm" />
-   <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
+     <gap:plugin name="cordova-plugin-media" source="npm" />
+    <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
     <gap:plugin name="cordova-plugin-vibration" source="npm" />
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> 
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />-->
