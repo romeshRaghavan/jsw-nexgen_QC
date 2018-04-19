@@ -42,7 +42,9 @@
     <gap:plugin name="cordova-plugin-dialogs" source="npm" />
      <gap:plugin name="cordova-plugin-media" source="npm" />
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
-    <gap:plugin name="cordova-plugin-vibration" source="npm" />
+    <gap:plugin name="cordova-plugin-vibration" source="npm" /> 
+    <gap:plugin name="cordova-plugin-file" source="npm" spec="~4.1.1"/>
+    <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.5.0"/>
     <!-- <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" /> 
     <gap:plugin name="com.synconset.imagepicker" version="1.0.4" source="pgb" />-->
     <gap:plugin name="cordova-plugin-imagepicker" source="npm"/>
