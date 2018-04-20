@@ -1,4 +1,5 @@
 <script type="text/javascript">
+	try{
 cordova.plugins.barcodeScanner.scan(
       function (result) {
           alert("We got a barcode\n" +
@@ -13,6 +14,9 @@ cordova.plugins.barcodeScanner.scan(
           
       }
    );
+	}catch(e){
+	alert("issue exist");	
+		}
 </script>
   <div class="modal-body clearfix">
  	 <div style="display:none" id="loading" >
