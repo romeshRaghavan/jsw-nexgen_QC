@@ -1,11 +1,16 @@
 <script type="text/javascript">
-	try{
+try{
 cordova.plugins.barcodeScanner.scan(
       function (result) {
-          alert("We got a barcode\n" +
+          /*alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
+                "Cancelled: " + result.cancelled);*/
+	       if(!result.cancelled){
+		       barcodeWebservice(result.cancelled,result.text);
+                }else if(result.cancelled){
+                      cancel();
+                }
       },
       function (error) {
           alert("Scanning failed: " + error);
@@ -24,9 +29,9 @@ cordova.plugins.barcodeScanner.scan(
           disableSuccessBeep: false // iOS and Android
       }
    );
-	}catch(e){
-	alert("issue exist : "+e);	
-		}
+}catch(e){
+	alert("Issue exist : "+e);	
+}
 </script>
   <div class="modal-body clearfix">
  	 <div style="display:none" id="loading" >
