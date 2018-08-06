@@ -1,0 +1,42 @@
+<script>
+var headerValue=headerMsg;
+document.getElementById("headerId").innerHTML = headerValue;
+//hideTRMenus();
+//hideEAMenus(); 
+hideMultilanguage();
+</script>
+<script type="text/javascript">
+		var lang = new Lang();
+		lang.dynamic('th', 'js/langpack/th.json');
+        lang.dynamic('ru','js/langpack/russian.json');
+        lang.dynamic('ae','js/langpack/arabic.json');
+        lang.dynamic('tamil','js/langpack/tamil.json');
+        lang.dynamic('hindi','js/langpack/hindi.json');
+        lang.dynamic('ka','js/langpack/kannada.json');
+		lang.init({
+			defaultLang: 'en'
+		});
+</script>
+<div class="topfixednavigate" >
+<img class="expenzingMainImg" src="images/Expenzing_Square.png"/>
+        <center><H4 id="headerId" class="headerposition"></H4></center>
+<spen id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a lang="en" href="#" onclick="showSyncMaster()" >Sync Masters</a>
+  <a href="#" id='multiLang' onclick="showMultiLanguag()" lang="en">Settings</a>
+  <a lang="en"  href="#" onclick="showHelpMenu()">Help</a>
+</spen>
+
+<span class="togglergtbtn" align="right" onclick="openNav();"><img src="css/cssimages/nav-icon.png" width="30px" height="25px"/></span>
+    
+    
+
+		<div lang="en" style="display:none" id="syncSuccessMsg" class="displaysynctext">
+               Expenses synchronized successfully.
+  		</div>
+		<div lang="en" style="display:none" id="syncFailureMsg" class="displaysynctext">
+               Expenses not synchronized successfully.
+  		</div>
+</div>
+
+>
