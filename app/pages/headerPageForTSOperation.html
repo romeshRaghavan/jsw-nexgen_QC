@@ -1,0 +1,39 @@
+<script>
+	oprationONTravelSettlementExp();
+    hideMultilanguage();
+</script>
+<script type="text/javascript">
+		var lang = new Lang();
+		lang.dynamic('th', 'js/langpack/th.json');
+        lang.dynamic('ru','js/langpack/russian.json');
+        lang.dynamic('ae','js/langpack/arabic.json');
+        lang.dynamic('tamil','js/langpack/tamil.json');
+        lang.dynamic('hindi','js/langpack/hindi.json');
+        lang.dynamic('ka','js/langpack/kannada.json');
+		lang.init({
+			defaultLang: 'en'
+		});
+</script>
+<div class="topfixednavigate" >
+<a href="#" class="backarrowbtn">
+<img class="pagebackpoint" src="images/left-arrow.png" width="15px" height="25px" onclick="goBack();"/>
+<img class="expenzingImg" src="images/Expenzing_Square.png" onclick="goBack();"/></a>
+<img class="selectionDeleteBEBtns" width="35px" height="25px" src="images/delete.png" id="deleteTS" >
+<img class="selectionSynchBEBtns" width="35px" height="25px" src="images/synch.png" id="synchTS" >
+<H4 id="headerId" class="headerposition"></H4>
+<spen id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#" onclick="showSyncMaster()" lang="en" >Sync Masters</a>
+  <a href="#" id='multiLang' onclick="showMultiLanguag()" lang="en">Settings</a>
+  <a href="#"  onclick="showHelpMenu()" lang="en">Help</a>
+    <a lang="en"  href="#" onclick="logOut()">Log Out</a>
+</spen>
+
+<span class="togglergtbtn" align="right" onclick="openNav();"><img src="css/cssimages/nav-icon.png" width="30px" height="25px"/></span>
+<div  style="display:none" id="syncSuccessMsg" class="displaysynctext" lang="en">
+               Expenses synchronized successfully.
+  		</div>
+		<div  style="display:none" id="syncFailureMsg" class="displaysynctext" lang="en">
+               Expenses not synchronized successfully.
+  		</div>
+</div>
